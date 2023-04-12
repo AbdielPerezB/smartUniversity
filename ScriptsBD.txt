@@ -52,3 +52,6 @@ INSERT INTO lobobicis(id,nom,lt,lg,estado) VALUES
 (17,'Multiaulas','18.9974691','-98.2019957','1'),
 (18,'Contaduria','18.999261','-98.2036558','1'),
 (19,'COMDE','19.0007156','-98.2025303','1');
+
+
+#PRUEBA PUSH
