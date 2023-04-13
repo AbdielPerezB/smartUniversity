@@ -1,4 +1,4 @@
-#Berny estuvo aqui XD
+#Abdi estuvo aquí
 create database Universidad;
 use Universidad;
 
