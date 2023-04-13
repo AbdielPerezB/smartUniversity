@@ -26,25 +26,50 @@
 </head>
 <body class="fondo">
     <div>
-
     </div>
-<div class="container">
+    <div class="container">
     <div class="row">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4">
+          <div class="col-sm-4 col-12"></div>
+            <div class="col-sm-4 col-12">
             <div class="panel">
                 <form action="valida.php" method="post">
-                    <div class="mb-3">
-                        <label for="user" class="form-label">Email:</label>
-                        <input type="email" class="form-control" id="user" name="login">
-                    </div>
-                    <div class="mb-3">
-                        <label for="pass" class="form-label">Password:</label>
-                        <input type="password" class="form-control" id="pass" name="pass">
-                    </div>
-                    <div class="mb-3 d-grid">
-                        <button type="submit" class="btn btn-primary">Login</button>
-                    </div>
+                <div class="d-flex justify-content-center">
+                <img src="img/perfil2.png" style="max-width: 150px">
+              </div>
+
+              <div class="input-group mt-4">
+                <div class="input-group-text bg-primary">
+                  <img
+                    src="img/username-icon.svg"
+                    alt="username-icon"
+                    style="height: 1rem"
+                  />
+                </div>
+                <input
+                  class="form-control bg-light"
+                  type="text"
+                  placeholder="Email"
+                />
+              </div>
+              <div class="input-group mt-1">
+                <div class="input-group-text btn-primary">
+                  <img
+                    src="img/password-icon.svg"
+                    alt="password-icon"
+                    style="height: 1rem"
+                  />
+                </div>
+                <input
+                  class="form-control bg-light"
+                  type="Password"
+                  placeholder="Password"
+                />
+              </div>
+              <div class="btn btn-primary text-white w-100 mt-4 fw-semibold shadow-sm">
+                
+                Iniciar sesion
+              </div>
+            </div>
                 </form>
             </div>
         </div>

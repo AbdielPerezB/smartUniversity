@@ -1,3 +1,4 @@
+#Berny estuvo aqui XD
 create database Universidad;
 use Universidad;
 
@@ -21,7 +22,7 @@ correo VARCHAR(50),
 pass VARCHAR(100)
 );
 
-#0->admin, 1->estudiante, 3->adminLoboBici
+#0->admin, 1->estudiante, 2->adminLobobus 3->adminLoboBici
 
 INSERT INTO usuario (nom, app, apm, matricula, tipo, correo, pass) VALUES
 ('Abdiel', 'Pérez', 'Balcón', 201931429, 1, 'abdiel.perezb@alumno.buap.mx', '1234');
