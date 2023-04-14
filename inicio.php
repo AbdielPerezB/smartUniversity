@@ -16,6 +16,8 @@
   <nav class="navbar navbar-expand-md navbar-dark bg-success">
     <!-- navbar->clase para que booystrap sepa que es un nav -->
     <!-- navbar-expand-md->el menu colapsa en mediano -->
+    <!-- navbar-dark->estilo del nav -->
+    <!-- bg-success->background color success del nav -->
     <div class="container-fluid">
       <!-- Bootstrap siempre recomienda un container fluid para el nav -->
 
@@ -23,7 +25,7 @@
       <a class="navbar-brand" href="">
         <!-- navbar-brand es la clase para el icono con una imagen por ejemplo y nombre de la empresa -->
         <img src="img/logo.jpg" alt="logo" width="100">
-        <span>BUAP Inteligente</span>
+        <!-- <span>Aqui puedes ponerle algo</span> -->
       </a>
 
       <!-- boton del menu -->
@@ -42,23 +44,36 @@
       <div class="collapse navbar-collapse" id="menu">
         <ul class="navbar-nav me-auto">
           <li class="nav-item"><a class="nav-link active" href="">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="">Precio</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#"
-            id="navbarDropdown"
-            role="button"
-            data-bs-toggle="dropdown">Servicios</a>
-            <!-- Creando un submenu. POr eso se les pone dropdown, dropdown-toggle, id, role y data-bs-toggle-->
-            <ul class="dropdown-menu bg-secondary"> <!-- le indicamos que es un submenu con dropdown-menu -->
-              <!-- A continuación tambipen le ponemos las clases a las etiquetas a -->
-              <li><a class="dropdown-item" href="">Renta</a></li>
-              <li><a class="dropdown-item" href="">Equipos</a></li>
-              <li><a class="dropdown-item" href="">Networking</a></li>
-            </ul>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="">Dirección de calles</a></li>
+          <li class="nav-item"><a class="nav-link" href="">Lobobus</a></li>
+          <li class="nav-item"><a class="nav-link" href="">Lobobici</a></li>
+          <li class="nav-item"><a class="nav-link" href="">Horarios de clases</a></li>
         </ul>
         <!-- Linea para que se vea bonito el colapsable -->
         <hr class="text-white-50"/>
+
+        <ul class="navbar-nav flex-row flex-wrap">
+          <li class="nav-item">
+            <!-- icono -->
+            <a class="navbar-brand" href="#">
+              <!-- navbar-brand es la clase para el icono con una imagen por ejemplo y nombre de la empresa -->
+              <img src="img/Admin.jpg" alt="logo" height="50" style="border-radius: 15px;">
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown">Abdiel J. Pérez B.</a>
+            <!-- Creando un submenu. POr eso se les pone dropdown, dropdown-toggle, id, role y data-bs-toggle-->
+            <ul class="dropdown-menu bs-success-text-emphasis"> <!-- le indicamos que es un submenu con dropdown-menu -->
+              <!-- A continuación tambipen le ponemos las clases a las etiquetas a -->
+              <li><a class="dropdown-item" href="">Mi perfil</a></li>
+              <li><a class="dropdown-item" href="">Ver usuarios</a></li>
+              <li><a class="dropdown-item" href="">Cerrar sesión</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
