@@ -13,19 +13,6 @@
             background-repeat: no-repeat, no-repeat;
             background-color: #00385c;
         }
-		.dropdown {
-			position: relative;
-			display: inline-block;
-		}
-		.dropdown-content {
-			display: none;
-			position: absolute;
-			z-index: 1;
-		}
-		.dropdown:hover .dropdown-content {
-			display: block;
-		}
-		
 		#map {
 			height: 500px;
 			width: 700px;
@@ -34,44 +21,37 @@
 	</style>
 </head>
 <body class="fondo">
-		<li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-white" href="#"
-            id="navbarDropdown"
-            role="button"
-            data-bs-toggle="dropdown">Disponible</a>
-            <!-- Creando un submenu. POr eso se les pone dropdown, dropdown-toggle, id, role y data-bs-toggle-->
-            <ul class="dropdown-menu bs-success-text-emphasis"> <!-- le indicamos que es un submenu con dropdown-menu -->
-              <!-- A continuación tambipen le ponemos las clases a las etiquetas a -->
-              <li><a class="dropdown-item" href="">DAE</a></li>
-              <li><a class="dropdown-item" href="">CAALE</a></li>
-              <li><a class="dropdown-item" href="">Computación</a></li>
-            </ul>
-          </li>
+<nav class="navbar navbar-expand-md navbar-dark bg-success">
+<button class="navbar-toggler" 
+      type="button" 
+      data-bs-toggle="collapse" 
+      data-bs-target="#menu"
+      aria-controls="navbarSupportedContent" 
+      aria-expanded="false" 
+      aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Elementos del menpu colapsable -->
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link active" href="">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="">Dirección de calles</a></li>
+          <li class="nav-item"><a class="nav-link" href="">Lobobus</a></li>
+          <li class="nav-item"><a class="nav-link" href="">Lobobici</a></li>
+          <li class="nav-item"><a class="nav-link" href="">Horarios de clases</a></li>
+        </ul>
+        <!-- Linea para que se vea bonito el colapsable -->
+        <hr class="text-white-50"/>
 
 
-	<div class="dropdown">
-		<button>Casetas disponibles</button>
-		<div class="dropdown-content">
-			<ul>
-				<li>Caseta: </li>
-				<li>Caseta:</li>
-				<li>Caseta:</li>
-			</ul>
-		</div>
-	</div>
-	<div class="dropdown">
-		<button>Casetas no disponibles</button>
-		<div class="dropdown-content">
-			<ul>
-				<li>Caseta: </li>
-				<li>Caseta:</li>
-				<li>Caseta:</li>
-			</ul>
-		</div>
-	</div>
-	<div id="map"></div>
+		  <div id="map"></div>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjb7q0iaGczXVMR75hiNFyNb-hsbH0Xm8&callback=initMap&v=weekly&language=es&region=ES"
+      defer
+    ></script>
+
 	<script>
-
 
 function initMap() {
             //18.9998822,-98.2019775
@@ -202,33 +182,6 @@ function initMap() {
 
 window.initMap = initMap;
 
-		// function initMap() {
-		// 	const lugar = { lat: 18.9998822, lng: -98.2019775 };
-  		// 	const map = new google.maps.Map(document.getElementById("map"), {
-    	// 	scaleControl: true,
-    	// 	center: lugar,
-    	// 	zoom: 16,
-  		// 	});
- 		// 	const infowindow = new google.maps.InfoWindow();
-		// 	/*var geocoder = new google.maps.Geocoder();
-		// 	var address = 'Benemérita Universidad Autónoma de Puebla';
-		// 	geocoder.geocode({ 'address': address }, function(results, status) {
-		// 		if (status == 'OK') {
-		// 			var myLatLng = {lat: 18.9991275, lng: -98.2015344};
-		// 			var map = new google.maps.Map(document.getElementById('map'), {
-		// 				zoom: 12,
-		// 				center: myLatLng
-		// 			});
-		// 			var marker = new google.maps.Marker({
-		// 				position: myLatLng,
-		// 				map: map,
-		// 				title: 'Benemérita Universidad Autónoma de Puebla'
-		// 			});
-		// 		} else {
-		// 			alert('No se pudo obtener la ubicación: ' + status);
-		// 		}
-		// 	});*/
 	</script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjb7q0iaGczXVMR75hiNFyNb-hsbH0Xm8&callback=initMap&v=weekly&language=es&region=ES" async defer></script>
-</body>
+	</body>
 </html>
