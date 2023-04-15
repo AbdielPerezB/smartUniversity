@@ -20,14 +20,13 @@
         <div class="sidebar" id="side_nav">
             <div class="header-box px-2 pt-3 pb-4 d-flex justify-content-between">
                 <h1 class="fs-4">
-                    <span class="bg-white text-dark rounded shadow px-2 me-2">CL</span>
-                    <span class="text-white">Coding League</span>
+                    <span class="bg-white text-dark rounded shadow px-2 me-2">BUAP</span>
+                    <span class="text-white">Inteligente</span>
                 </h1>
                 <button class="btn d-md-none d-block close-btn px-1 py-0 text-white">
                     <i class="fa-solid fa-bars-staggered"></i>
                 </button>
             </div>
-
             <ul class="list-unstyled px-2">
                 <li class="active">
                     <a href="#" class="text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-house me-1"></i></i>Inicio</a>
@@ -46,13 +45,6 @@
                 </li>
             </ul>
             <hr class="text-white-50"/>
-            <!-- ----------- -->
-
-            <ul class="list-unstyled px-2">
-                <li class="">
-                    <a href="#" class="text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-house me-1"></i></i>Settings</a>
-                </li>
-            </ul>
         </div>
 
         <!-- Content -->
@@ -62,7 +54,7 @@
                 <div class="container-fluid">
                     <div class="d-flex justify-content-between d-md-none d-block">
                         <button class="btn px-1 py-0 open-btn me-2"><i class="fa-solid fa-bars-staggered"></i></button>
-                        <a class="navbar-brand fs-4" href="#"><span class="bg-dark rounded px-2 py-0 text-white">CL</span></a>
+                        <a class="navbar-brand fs-4" href="#"><span class="bg-buap rounded px-2 py-0 text-white">BI</span></a>
                     </div>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                             aria-controls="navbarSupportedContent"
@@ -70,10 +62,20 @@
                             aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <div class="collapse navbar-collapse justify-content-end me-5" id="navbarSupportedContent">
                         <ul class="navbar-nav mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Profile</a>
+                            <li class="nav-item dropdown ">
+                                <a class="nav-link active dropdown-toggle" href="#"
+                                id="navbarDropdown"
+                                role="button"
+                                data-bs-toggle="dropdown"><i class="fa-solid fa-user pe-1 color-buap"></i>Mi perfil</a>
+                                <!-- Creando un submenu. POr eso se les pone dropdown, dropdown-toggle, id, role y data-bs-toggle-->
+                                <ul class="dropdown-menu bs-success-text-emphasis"> <!-- le indicamos que es un submenu con dropdown-menu -->
+                                    <!-- A continuación tambipen le ponemos las clases a las etiquetas a -->
+                                    <li><a class="dropdown-item" href="">Mi perfil</a></li>
+                                    <li><a class="dropdown-item" href="">Ver usuarios</a></li>
+                                    <li><a class="dropdown-item" href="">Cerrar sesión</a></li>
+                                </ul>
                             </li>
                         </ul>
                     </div>

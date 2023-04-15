@@ -2,7 +2,7 @@ body{
     background: #eee;
 }
 #side_nav{
-    background: #000;
+    background: #002a4c;
     min-width: 250px;
     max-width: 250px;
     transition: all 0.2s;
@@ -18,14 +18,14 @@ body{
 }
 
 .sidebar li.active a, .sidebar li.active a:hover{
-    color: #000;
+    color: #002a4c;
 }
 
 .sidebar li a{
     color: #fff;
 }
 .nav{
-    background: #000;
+    background: #002a4c;
 }
 @media(max-width: 767px){
     #side_nav{
@@ -37,4 +37,10 @@ body{
     #side_nav.active{
         margin-left: 0;
     }
+}
+.bg-buap{
+    background-color: #002a4c;
+}
+.color-buap{
+    color:#002a4c;
 }
