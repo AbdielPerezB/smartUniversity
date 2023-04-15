@@ -34,6 +34,21 @@
 	</style>
 </head>
 <body class="fondo">
+		<li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown">Disponible</a>
+            <!-- Creando un submenu. POr eso se les pone dropdown, dropdown-toggle, id, role y data-bs-toggle-->
+            <ul class="dropdown-menu bs-success-text-emphasis"> <!-- le indicamos que es un submenu con dropdown-menu -->
+              <!-- A continuación tambipen le ponemos las clases a las etiquetas a -->
+              <li><a class="dropdown-item" href="">DAE</a></li>
+              <li><a class="dropdown-item" href="">CAALE</a></li>
+              <li><a class="dropdown-item" href="">Computación</a></li>
+            </ul>
+          </li>
+
+
 	<div class="dropdown">
 		<button>Casetas disponibles</button>
 		<div class="dropdown-content">
