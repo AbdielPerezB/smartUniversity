@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="mb-3 d-grid">
-                <a class="btn btn-success mb-3" href="lobobici.php" role="button">Regresar</a>
+                <a class="btn btn-success mb-3" href="lobobicima.php" role="button">Regresar</a>
                 </div>
             </div>
         

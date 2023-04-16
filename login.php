@@ -28,7 +28,12 @@
             <div class="col-sm-4 col-12"></div>
             <div class="col-sm-4 col-12">
                 <div class="panel">
-                    <form action="valida.php" method="post">
+                    <!-- <form action="valida.php" method="post"> -->
+                    <form method = "post" action="">
+                        <?php
+                            include "modelo/conexion_bd.php";
+                            include "class/controlador_login.php";
+                        ?>
                         <div class="d-flex justify-content-center">
                             <img src="img/perfil2.png" style="max-width: 150px">
                         </div>
@@ -44,9 +49,11 @@
                             </div>
                             <input class="form-control bg-light" type="password" placeholder="Password" name="Password" required>
                         </div>
-                        <button class="btn btn-primary text-white w-100 mt-4 fw-semibold shadow-sm" type="submit">
+                        <!-- <button class="btn btn-primary text-white w-100 mt-4 fw-semibold shadow-sm" type="submit">
                             Iniciar sesión
-                        </button>
+                        </button> -->
+
+                        <input class = "btn btn-primary w-100 mt-4 form-control" type="submit" value="Iniciar" name = "iniciar">
                     </form>
                 </div>
             </div>

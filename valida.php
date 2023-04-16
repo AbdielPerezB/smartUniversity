@@ -6,7 +6,7 @@ $pass = isset($_POST["Password"])?$_POST["Password"]:"";
 if($user == "adminlobobici@alumno.buap.mx" && $pass = "adminlobobici")
 {
     $_SESSION["nom"] = "adminlobobici@alumno.buap.mx";
-    header("Location: lobobici.php");
+    header("Location: index.php");
 
 }
 else
