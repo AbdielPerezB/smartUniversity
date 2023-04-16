@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
 <head>
 	<title>Lobobici parte del cliente</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 	<style>
         .fondo
         {
@@ -13,6 +19,7 @@
             background-repeat: no-repeat, no-repeat;
             background-color: #00385c;
         }
+	
 		#map {
 			height: 500px;
 			width: 700px;
@@ -22,36 +29,43 @@
 </head>
 <body class="fondo">
 <nav class="navbar navbar-expand-md navbar-dark bg-success">
-<button class="navbar-toggler" 
-      type="button" 
-      data-bs-toggle="collapse" 
-      data-bs-target="#menu"
-      aria-controls="navbarSupportedContent" 
-      aria-expanded="false" 
-      aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <!-- navbar->clase para que booystrap sepa que es un nav -->
+    <!-- navbar-expand-md->el menu colapsa en mediano -->
+    <!-- navbar-dark->estilo del nav -->
+    <!-- bg-success->background color success del nav -->
+    <div class="container-fluid">
+      <!-- Bootstrap siempre recomienda un container fluid para el nav -->
 
-      <!-- Elementos del menpu colapsable -->
-      <div class="collapse navbar-collapse" id="menu">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item"><a class="nav-link active" href="">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="">Dirección de calles</a></li>
-          <li class="nav-item"><a class="nav-link" href="">Lobobus</a></li>
-          <li class="nav-item"><a class="nav-link" href="">Lobobici</a></li>
-          <li class="nav-item"><a class="nav-link" href="">Horarios de clases</a></li>
+  <ul class="navbar-nav flex-row flex-wrap">
+  <li class="nav-item">
+            <!-- icono -->
+            <a class="navbar-brand" href="#"> </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown">Disponible</a>
+            <!-- Creando un submenu. POr eso se les pone dropdown, dropdown-toggle, id, role y data-bs-toggle-->
+            <ul class="dropdown-menu bs-success-text-emphasis"> <!-- le indicamos que es un submenu con dropdown-menu -->
+              <!-- A continuación tambipen le ponemos las clases a las etiquetas a -->
+              <li><a class="dropdown-item" href="">DAE</a></li>
+              <li><a class="dropdown-item" href="">CAALE</a></li>
+              <li><a class="dropdown-item" href="">Computación</a></li>
+            </ul>
+          </li>
         </ul>
-        <!-- Linea para que se vea bonito el colapsable -->
-        <hr class="text-white-50"/>
+    </div>
+  </nav>
 
 
-		  <div id="map"></div>
+          <div id="map"></div>
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjb7q0iaGczXVMR75hiNFyNb-hsbH0Xm8&callback=initMap&v=weekly&language=es&region=ES"
       defer
     ></script>
-
 	<script>
+
 
 function initMap() {
             //18.9998822,-98.2019775
@@ -181,7 +195,6 @@ function initMap() {
 }
 
 window.initMap = initMap;
-
 	</script>
-	</body>
+</body>
 </html>
