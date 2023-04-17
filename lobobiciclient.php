@@ -28,7 +28,7 @@
 	</style>
 </head>
 <body class="fondo">
-<nav class="navbar navbar-expand-md navbar-dark bg-success">
+<nav class="navbar navbar-expand-md navbar-dark bg-primary">
     <!-- navbar->clase para que booystrap sepa que es un nav -->
     <!-- navbar-expand-md->el menu colapsa en mediano -->
     <!-- navbar-dark->estilo del nav -->
