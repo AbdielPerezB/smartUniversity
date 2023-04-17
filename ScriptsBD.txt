@@ -1,9 +1,10 @@
+#Abdi estuvo aquí
 create database Universidad;
 use Universidad;
 
 create table lobobicis
 (
-id int primary key not null,
+id int primary key not null PRIMARY KEY AUTO_INCREMENT,
 nom varchar (100),
 lt Decimal(10,7),
 lg Decimal(10,7),
@@ -16,42 +17,42 @@ nom VARCHAR(30),
 app VARCHAR(20),
 apm VARCHAR(20),
 matricula int,
-tipo int,
+estado int,
 correo VARCHAR(50),
 pass VARCHAR(100)
 );
 
 #0->admin, 1->estudiante, 2->adminLobobus 3->adminLoboBici
 
-INSERT INTO usuario (nom, app, apm, matricula, tipo, correo, pass) VALUES
+INSERT INTO usuario (nom, app, apm, matricula, estado, correo, pass) VALUES
 ('Abdiel', 'Pérez', 'Balcón', 201931429, 1, 'abdiel.perezb@alumno.buap.mx', '1234');
 
-INSERT INTO usuario (nom, app, apm, matricula, tipo, correo, pass) VALUES
+INSERT INTO usuario (nom, app, apm, matricula, estado, correo, pass) VALUES
 ('admin', 'ApellidoPaterno', 'ApellidoMaterno', 200000000, 0, 'admin@alumno.buap.mx', 'admin');
 
-INSERT INTO usuario (nom, app, apm, matricula, tipo, correo, pass) VALUES
+INSERT INTO usuario (nom, app, apm, matricula, estado, correo, pass) VALUES
 ('adminlobobici', 'ApellidoPaterno', 'ApellidoMaterno', 200000000, 3, 'adminlobobici@alumno.buap.mx', 'adminlobobici');
 
-INSERT INTO lobobicis(id,nom,lt,lg,estado) VALUES
-(1,'DAE','18.9981147','-98.1952396','1'),
-(2,'Cultura Física','19.0003148','-98.1952657','1'),
-(3,'CAALE','19.0011248','-98.1972553','1'),
-(4,'Administración','19.0015828','-98.1998915','1'),
-(5,'Electrónica','19.0027278','-98.2024768','1'),
-(6,'Ingeniería','19.0028093','-98.2031376','1'),
-(7,'Teatro al Aire Libre','19.0035506','-98.2038778','1'),
-(8,'Computación / PLU','19.004805','-98.2050865','1'),
-(9,'Laboratorios Ciencias Químicas','19.0049292','-98.2035041','1'),
-(10,'Instituto de Física','19.0038878','-98.2017433','1'),
-(11,'Físico Matemáticas','19.0034665','-98.2003851','1'),
-(12,'Derecho','19.0027784','-98.1987008','1'),
-(13,'Puerta 1:24 Sur','19.0003055','-98.1944705','1'),
-(14,'STU','18.9975427','-98.1958934','1'),
-(15,'Unidad de Seminarios','18.995904','-98.199642','1'),
-(16,'Biblioteca Central','18.9958669','-98.2011132','1'),
-(17,'Multiaulas','18.9974691','-98.2019957','1'),
-(18,'Contaduria','18.999261','-98.2036558','1'),
-(19,'COMDE','19.0007156','-98.2025303','1');
+INSERT INTO lobobicis(nom,lt,lg,estado) VALUES
+('DAE','18.9981147','-98.1952396','1'),
+('Cultura Física','19.0003148','-98.1952657','1'),
+('CAALE','19.0011248','-98.1972553','1'),
+('Administración','19.0015828','-98.1998915','1'),
+('Electrónica','19.0027278','-98.2024768','1'),
+('Ingeniería','19.0028093','-98.2031376','1'),
+('Teatro al Aire Libre','19.0035506','-98.2038778','1'),
+('Computación / PLU','19.004805','-98.2050865','1'),
+('Laboratorios Ciencias Químicas','19.0049292','-98.2035041','1'),
+('Instituto de Física','19.0038878','-98.2017433','1'),
+('Físico Matemáticas','19.0034665','-98.2003851','1'),
+('Derecho','19.0027784','-98.1987008','1'),
+('Puerta 1:24 Sur','19.0003055','-98.1944705','1'),
+('STU','18.9975427','-98.1958934','1'),
+('Unidad de Seminarios','18.995904','-98.199642','1'),
+('Biblioteca Central','18.9958669','-98.2011132','1'),
+('Multiaulas','18.9974691','-98.2019957','1'),
+('Contaduria','18.999261','-98.2036558','1'),
+('COMDE','19.0007156','-98.2025303','1');
 
 
 #PRUEBA PUSH
