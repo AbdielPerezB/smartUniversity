@@ -1,10 +1,10 @@
 #Abdi estuvo aquí
-create database Universidad;
-use Universidad;
+create database smartUniversity;
+use smartUniversity;
 
 create table lobobicis
 (
-id int primary key not null PRIMARY KEY AUTO_INCREMENT,
+id int not null PRIMARY KEY AUTO_INCREMENT,
 nom varchar (100),
 lt Decimal(10,7),
 lg Decimal(10,7),
