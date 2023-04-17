@@ -4,31 +4,15 @@ if (empty($_SESSION["id"])){
     header("location: login.php");
 }
 ?>
-<html dir="es">
-  <head>
-  <meta charset="UTF-8">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar Caseta</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon">
-   
-
-    <style>
-        #map {
-        height: 100%;
-        }
-
-        /* 
-        * Optional: Makes the sample page fill the window. 
-        */
-        html,
-        body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        }
-    </style>
     <style>
         .contenedor
         {
@@ -56,8 +40,9 @@ if (empty($_SESSION["id"])){
         padding: 0;
         }
     </style>
-  </head>
-  <body class="fondo">
+
+</head>
+<body class="fondo">
 <div class="container col-sm-5 mb-3 mt-3">
 <div class="contenedor1">
     <?php
@@ -98,11 +83,7 @@ if (empty($_SESSION["id"])){
             </div>
         </div>
     </div>
-
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjb7q0iaGczXVMR75hiNFyNb-hsbH0Xm8&callback=initMap&v=weekly&language=es&region=ES"
-      defer
-    ></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjb7q0iaGczXVMR75hiNFyNb-hsbH0Xm8&callback=initMap&v=weekly&language=es&region=ES"></script>
     <script src="js/jquery-3.6.3.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script>
@@ -171,5 +152,5 @@ window.initMap = initMap;
         
        
     </script>
-  </body>
+</body>
 </html>

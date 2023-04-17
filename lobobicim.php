@@ -1,5 +1,7 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,51 +10,65 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon">
     <style>
-        .contenedor
-        {
+        .contenedor {
             padding-top: 50px;
             padding-right: 20px;
             padding-left: 20px;
             padding-bottom: 50px;
             box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
         }
-        .fondo
-        {
-            
-        }
 
+        .fondo {}
     </style>
 </head>
-<body class="fondo">
-<div class="container">
-    <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8 ">
-            <div class="d-grid contenedor">
-                <div class="mb-3">
-                    <select class="form-select" id="id" name="id">
-                        <option selected>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="nom" class="form-label">Nombre:</label>
-                    <input type="text" class="form-control" id="nom" placeholder="Nombre">
-                </div>
-                <div class="mb-5 d-grid">
-                    <button class="btn btn-primary" onclick="">Modificar</button>
-                </div>
 
-                <div class="mb-3 d-grid">
-                <a class="btn btn-success mb-3" href="lobobicima.php" role="button">Regresar</a>
-                </div>
+<body class="fondo">
+    <div class="container col-sm-5 mb-3 mt-3">
+        <div class="contenedor1 ">
+            <?php
+            include("menu.php");
+            include("modelo/conexion_bd.php");
+            include ("lista_desp.php");
+            ?>
+            <div class="row">
+                <form method="post" action="">
+                    <!-- <div class="d-grid contenedor"> -->
+                    <div class="form-floating mb-3 mt-3">
+                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                            <?php echo $option_del_select; ?>
+                        </select>
+                        <label for="floatingSelect">Seleccione una Caseta</label>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="nom" class="form-label">Nombre:</label>
+                        <input type="text" class="form-control" id="nom" placeholder="Nombre">
+                    </div>
+                    <input class="btn btn-primary form-control" type="submit" value="Modificar" name="modificar">
+                    <div class="col-ms-2"></div>
+                </form>
             </div>
-        
         </div>
-        <div class="col-ms-2"></div>
     </div>
-</div>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").attr("disable", true);
+        });
+        function salir() {
+            location.href = "salir.php"
+        }
+        function agregar() {
+            location.href="lobobicima.php"
+            
+        }
+        function modificar() {
+            location.href = "lobobicim.php"
+        }
+        function eliminar() {
+            location.href = "lobobicime.php"
+        }  
+    </script>
 </body>
 </html>

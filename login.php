@@ -44,7 +44,7 @@
                             <input class="form-control bg-light" type="text" placeholder="Email" name="Email" required>
                         </div>
                         <div class="input-group mt-1">
-                            <div class="input-group-text btn-primary">
+                            <div class="input-group-text bg-primary">
                                 <img src="img/password-icon.svg" alt="password-icon" style="height: 1rem">
                             </div>
                             <input class="form-control bg-light" type="password" placeholder="Password" name="Password" required>
