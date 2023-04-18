@@ -18,20 +18,21 @@ app VARCHAR(20),
 apm VARCHAR(20),
 matricula int,
 estado int,
-correo VARCHAR(50),
+email VARCHAR(50),
 pass VARCHAR(100)
 );
 
 #0->admin, 1->estudiante, 2->adminLobobus 3->adminLoboBici
 
-INSERT INTO usuario (nom, app, apm, matricula, estado, correo, pass) VALUES
+INSERT INTO usuario (nom, app, apm, matricula, estado, email, pass) VALUES
 ('Abdiel', 'Pérez', 'Balcón', 201931429, 1, 'abdiel.perezb@alumno.buap.mx', '1234');
 
-INSERT INTO usuario (nom, app, apm, matricula, estado, correo, pass) VALUES
+INSERT INTO usuario (nom, app, apm, matricula, estado, email, pass) VALUES
 ('admin', 'ApellidoPaterno', 'ApellidoMaterno', 200000000, 0, 'admin@alumno.buap.mx', 'admin');
 
-INSERT INTO usuario (nom, app, apm, matricula, estado, correo, pass) VALUES
+INSERT INTO usuario (nom, app, apm, matricula, estado, email, pass) VALUES
 ('adminlobobici', 'ApellidoPaterno', 'ApellidoMaterno', 200000000, 3, 'adminlobobici@alumno.buap.mx', 'adminlobobici');
+
 
 INSERT INTO lobobicis(nom,lt,lg,estado) VALUES
 ('DAE','18.9981147','-98.1952396','1'),
