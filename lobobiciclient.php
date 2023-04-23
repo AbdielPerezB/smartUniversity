@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
 <head>
 	<title>Lobobici parte del cliente</title>
+ 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,25 +22,26 @@
         }
 	
 		#map {
-			height: 500px;
-			width: 700px;
+			height: 600px;
+			width: 800px;
 			display: block; margin: 0 auto
 		}
 	</style>
 </head>
 <body class="fondo">
-<nav class="navbar navbar-expand-md navbar-dark bg-primary">
-    <!-- navbar->clase para que booystrap sepa que es un nav -->
+
+<!-- <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+     navbar->clase para que booystrap sepa que es un nav -->
     <!-- navbar-expand-md->el menu colapsa en mediano -->
     <!-- navbar-dark->estilo del nav -->
     <!-- bg-success->background color success del nav -->
-    <div class="container-fluid">
+    <!--<div class="container-fluid">
       <!-- Bootstrap siempre recomienda un container fluid para el nav -->
 
-  <ul class="navbar-nav flex-row flex-wrap">
+  <!--<ul class="navbar-nav flex-row flex-wrap">
   <li class="nav-item">
             <!-- icono -->
-            <a class="navbar-brand" href="#"> </a>
+            <!--<a class="navbar-brand" href="#"> </a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-white" href="#"
@@ -47,55 +49,69 @@
             role="button"
             data-bs-toggle="dropdown">Disponible</a>
             <!-- Creando un submenu. POr eso se les pone dropdown, dropdown-toggle, id, role y data-bs-toggle-->
-            <ul class="dropdown-menu bs-success-text-emphasis"> <!-- le indicamos que es un submenu con dropdown-menu -->
+            <!--<ul class="dropdown-menu bs-success-text-emphasis"> <!-- le indicamos que es un submenu con dropdown-menu -->
               <!-- A continuación tambipen le ponemos las clases a las etiquetas a -->
-              <li><a class="dropdown-item" href="">DAE</a></li>
+              <!--<li><a class="dropdown-item" href="">DAE</a></li>
               <li><a class="dropdown-item" href="">CAALE</a></li>
               <li><a class="dropdown-item" href="">Computación</a></li>
             </ul>
           </li>
         </ul>
     </div>
-  </nav>
+  </nav> -->
 
 
-          <div id="map"></div>
+    <div id="map"></div>
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjb7q0iaGczXVMR75hiNFyNb-hsbH0Xm8&callback=initMap&v=weekly&language=es&region=ES"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjb7q0iaGczXVMR75hiNFyNb-hsbH0Xm8&callback=initMap&v=weekly&language=es&region=ES"
       defer
     ></script>
 	<script>
 
 
+
 function initMap() {
             //18.9998822,-98.2019775
+            //mapStyle para no visualizar nos nombres de lugares en el mapa.
+            var mapStyle = [
+          {
+            featureType: "poi",
+            elementType: "labels",
+            stylers: [{ visibility: "off" }],
+          },
+        ];
+     
+
+  const image ="img/bus.svg";
+  const image2 ="img/bicycle.svg";
   const lugar = { lat: 18.9998822, lng: -98.2019775 };
   const map = new google.maps.Map(document.getElementById("map"), {
     scaleControl: true,
     center: lugar,
     zoom: 16,
+    styles: mapStyle,
   });
   const infowindow = new google.maps.InfoWindow();
 
-  const marker = new google.maps.Marker({ map, position: { lat: 18.9981147, lng: -98.1952396 } });
-  const marker2 = new google.maps.Marker({ map, position: { lat: 19.0003148, lng: -98.1952657 } });
-  const marker3= new google.maps.Marker({ map, position: { lat: 19.0011248, lng: -98.1972553 } });
-  const marker4= new google.maps.Marker({ map, position: { lat: 19.0015828, lng: -98.1998915 } });
-  const marker5= new google.maps.Marker({ map, position: { lat: 19.0027278, lng: -98.2024768 } });
-  const marker6= new google.maps.Marker({ map, position: { lat: 19.0028093, lng: -98.2031376 } });
-  const marker7= new google.maps.Marker({ map, position: { lat: 19.0035506, lng: -98.2038778 } });
-  const marker8= new google.maps.Marker({ map, position: { lat: 19.004805, lng: -98.2050865 } });
-  const marker9= new google.maps.Marker({ map, position: { lat: 19.0049292, lng: -98.2035041 } });
-  const marker10= new google.maps.Marker({ map, position: { lat: 19.0038878, lng: -98.2017433 } });
-  const marker11= new google.maps.Marker({ map, position: { lat: 19.0034665, lng: -98.2003851 } });
-  const marker12= new google.maps.Marker({ map, position: { lat: 19.0027784, lng: -98.1987008 } });
-  const marker13= new google.maps.Marker({ map, position: { lat: 19.0003055, lng: -98.1944705 } });
-  const marker14= new google.maps.Marker({ map, position: { lat: 18.9975427, lng: -98.1958934 } });
-  const marker15= new google.maps.Marker({ map, position: { lat: 18.995904, lng: -98.199642 } });
-  const marker16= new google.maps.Marker({ map, position: { lat: 18.9958669, lng: -98.2011132 } });
-  const marker17= new google.maps.Marker({ map, position: { lat: 18.9974691, lng: -98.2019957 } });
-  const marker18= new google.maps.Marker({ map, position: { lat: 18.999261, lng: -98.2036558 } });
-  const marker19= new google.maps.Marker({ map, position: { lat: 19.0007156, lng: -98.2025303 } });
+  const marker = new google.maps.Marker({ map, position: { lat: 18.9981147, lng: -98.1952396 }, icon: image2 });
+  const marker2 = new google.maps.Marker({ map, position: { lat: 19.0003148, lng: -98.1952657 }, icon: image2 });
+  const marker3= new google.maps.Marker({ map, position: { lat: 19.0011248, lng: -98.1972553 }, icon: image2});
+  const marker4= new google.maps.Marker({ map, position: { lat: 19.0015828, lng: -98.1998915 }, icon: image2 });
+  const marker5= new google.maps.Marker({ map, position: { lat: 19.0027278, lng: -98.2024768 }, icon: image2 });
+  const marker6= new google.maps.Marker({ map, position: { lat: 19.0028093, lng: -98.2031376 }, icon: image2 });
+  const marker7= new google.maps.Marker({ map, position: { lat: 19.0035506, lng: -98.2038778 }, icon: image2 });
+  const marker8= new google.maps.Marker({ map, position: { lat: 19.004805, lng: -98.2050865 }, icon: image2 });
+  const marker9= new google.maps.Marker({ map, position: { lat: 19.0049292, lng: -98.2035041 }, icon: image2 });
+  const marker10= new google.maps.Marker({ map, position: { lat: 19.0038878, lng: -98.2017433 }, icon: image2 });
+  const marker11= new google.maps.Marker({ map, position: { lat: 19.0034665, lng: -98.2003851 }, icon: image2 });
+  const marker12= new google.maps.Marker({ map, position: { lat: 19.0027784, lng: -98.1987008 }, icon: image2 });
+  const marker13= new google.maps.Marker({ map, position: { lat: 19.0003055, lng: -98.1944705 }, icon: image2 });
+  const marker14= new google.maps.Marker({ map, position: { lat: 18.9975427, lng: -98.1958934 }, icon: image2 });
+  const marker15= new google.maps.Marker({ map, position: { lat: 18.995904, lng: -98.199642 }, icon: image2 });
+  const marker16= new google.maps.Marker({ map, position: { lat: 18.9958669, lng: -98.2011132 }, icon: image2 });
+  const marker17= new google.maps.Marker({ map, position: { lat: 18.9974691, lng: -98.2019957 }, icon: image2 });
+  const marker18= new google.maps.Marker({ map, position: { lat: 18.999261, lng: -98.2036558 }, icon: image2 });
+  const marker19= new google.maps.Marker({ map, position: { lat: 19.0007156, lng: -98.2025303 }, icon: image2 });
 
 
   marker.addListener("click", () => {
@@ -192,6 +208,7 @@ function initMap() {
     infowindow.setContent("lobo bici COMDE");
     infowindow.open(map, marker19);
   });
+
 }
 
 window.initMap = initMap;
