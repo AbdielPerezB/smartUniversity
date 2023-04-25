@@ -29,38 +29,9 @@
 	</style>
 </head>
 <body class="fondo">
-
-<!-- <nav class="navbar navbar-expand-md navbar-dark bg-primary">
-     navbar->clase para que booystrap sepa que es un nav -->
-    <!-- navbar-expand-md->el menu colapsa en mediano -->
-    <!-- navbar-dark->estilo del nav -->
-    <!-- bg-success->background color success del nav -->
-    <!--<div class="container-fluid">
-      <!-- Bootstrap siempre recomienda un container fluid para el nav -->
-
-  <!--<ul class="navbar-nav flex-row flex-wrap">
-  <li class="nav-item">
-            <!-- icono -->
-            <!--<a class="navbar-brand" href="#"> </a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-white" href="#"
-            id="navbarDropdown"
-            role="button"
-            data-bs-toggle="dropdown">Disponible</a>
-            <!-- Creando un submenu. POr eso se les pone dropdown, dropdown-toggle, id, role y data-bs-toggle-->
-            <!--<ul class="dropdown-menu bs-success-text-emphasis"> <!-- le indicamos que es un submenu con dropdown-menu -->
-              <!-- A continuación tambipen le ponemos las clases a las etiquetas a -->
-              <!--<li><a class="dropdown-item" href="">DAE</a></li>
-              <li><a class="dropdown-item" href="">CAALE</a></li>
-              <li><a class="dropdown-item" href="">Computación</a></li>
-            </ul>
-          </li>
-        </ul>
-    </div>
-  </nav> -->
-
-
+<?php
+include("icondis.php");
+?>
     <div id="map"></div>
     <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjb7q0iaGczXVMR75hiNFyNb-hsbH0Xm8&callback=initMap&v=weekly&language=es&region=ES"
@@ -84,6 +55,7 @@ function initMap() {
 
   const image ="img/bus.svg";
   const image2 ="img/bicycle.svg";
+  const image3 ="img/bicycleRed.svg";
   const lugar = { lat: 18.9998822, lng: -98.2019775 };
   const map = new google.maps.Map(document.getElementById("map"), {
     scaleControl: true,
@@ -98,7 +70,7 @@ function initMap() {
   const marker3= new google.maps.Marker({ map, position: { lat: 19.0011248, lng: -98.1972553 }, icon: image2});
   const marker4= new google.maps.Marker({ map, position: { lat: 19.0015828, lng: -98.1998915 }, icon: image2 });
   const marker5= new google.maps.Marker({ map, position: { lat: 19.0027278, lng: -98.2024768 }, icon: image2 });
-  const marker6= new google.maps.Marker({ map, position: { lat: 19.0028093, lng: -98.2031376 }, icon: image2 });
+  const marker6= new google.maps.Marker({ map, position: { lat: 19.0028093, lng: -98.2031376 }, icon: image3 });
   const marker7= new google.maps.Marker({ map, position: { lat: 19.0035506, lng: -98.2038778 }, icon: image2 });
   const marker8= new google.maps.Marker({ map, position: { lat: 19.004805, lng: -98.2050865 }, icon: image2 });
   const marker9= new google.maps.Marker({ map, position: { lat: 19.0049292, lng: -98.2035041 }, icon: image2 });
