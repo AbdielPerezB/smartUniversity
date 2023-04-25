@@ -1,9 +1,9 @@
 <?php
 abstract class database{
-    protected $conexion;
-    protected $response;
+    public $conexion;
+    public $response;
 
-    public function __construct($server, $user, $pass, $namedb){
+    public function __construct(){
         $this->conexion = @mysqli_connect(
                             'localhost',//'localhost',
                             'root',//'root',
@@ -16,11 +16,13 @@ abstract class database{
         $this->response = array();
         $this->conexion->set_charset("utf8"); //Establece el conjunto de caracteres predeterminado del cliente
     }
+    
 
     //function to getting response from server
     public function getResponse(){
-        return json_encode($this->response, JSON_UNESCAPED_UNICODE);//Lo retorna como json
+        return $this->response;
     }
+
 
     /*
     json_enconde() -> Devuelve un string con la representación JSON de value.

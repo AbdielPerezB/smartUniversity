@@ -29,29 +29,36 @@ $(document).ready(function(){
                 data: {datos}, //abreviatura de: datas: {datos: datos},
                 type: 'POST',
                 success: function(response){
-                    //let res = JSON.parse(response); //Convertimos la respuesta del servidor a Json
-                    //let status = res['Status'] === 'Success'? 'SI':'NO'; //Verificamos que hubo exito
+                    console.log(response);
+                    let res = JSON.parse(response); //Convertimos la respuesta del servidor a Json
+                    //console.log(res);
+                    //console.log(res['status']);
+                    let status = res['status'];
                     let url;
-                    //Si la conexión fue exitosa 
-                    //Dependiendo el tipo de usuario (nivel) lo reedirigimos a cierta ruta
-                    if(status == 'SI'){
+                    if(status == 'Success'){
+                        alert('Conexion establecida');
+                        
                         switch(res['estado']){
                             case '0':
-                                url = originUrlPath+'/users/admin/index.php';
+                                url = './users/admin/index.php';
                                 break;
                             case '1':
-                                url = originUrlPath+'/users/estudiante/index.php';
+                                url = './users/estudiante/index.php';
                                 break;
                             case '2':
-                                url = originUrlPath+'/users/adminLobobus/index.php';
+                                url = './users/adminLobobus/index.php';
                                 break;
                             case '3':
-                                url = originUrlPath+'/users/adminLobobici/index.php';
+                                url = './users/adminLobobici/index.php';
+                                
                         }
-                        $(location).attr('href','./inicio.php');
+                        $(location).attr('href',url);
+                        
                     }else{
-                        alert('Datos incorrectos');
+                        console.log("[ststus]:"+status);
+                        console.log("[message]:"+res['message']);
                     }
+                    
                 }
             });
         }

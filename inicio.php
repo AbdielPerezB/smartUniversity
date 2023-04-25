@@ -18,12 +18,12 @@
 
 <body>
     <div class="main-container d-flex">
-        <?php include "side_nav.php"; ?>
+        <?php include "./frontend/side_nav.php"; ?>
 
         <!-- Content -->
         <div class="content ">
             <!-- navbarHorizontal -->
-            <?php include "nav.php"; ?>
+            <?php include "./frontend/nav.php"; ?>
             <div class="container">
                 <!-- Aqui va el contenido -->
                 
