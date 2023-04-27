@@ -5,6 +5,7 @@
 	<title>Lobobici parte del cliente</title>
  
 	<meta charset="UTF-8">
+  
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon">
@@ -13,49 +14,48 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 	<style>
-        .fondo
+        /* .fondo
         {
             background-image: url(img/fondo.png);
             background-size: 100%;
             background-repeat: no-repeat, no-repeat;
             background-color: #00385c;
-        }
+        } */
 	
 		#map {
-			height: 600px;
+			height: 550px;
 			width: 800px;
 			display: block; margin: 0 auto
 		}
 	</style>
-</head>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjb7q0iaGczXVMR75hiNFyNb-hsbH0Xm8&callback=initMap&v=weekly&language=es&region=ES" defer></script>
 <body class="fondo">
-<?php
-include("icondis.php");
-?>
+
     <div id="map"></div>
-    <script
+    <!-- <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjb7q0iaGczXVMR75hiNFyNb-hsbH0Xm8&callback=initMap&v=weekly&language=es&region=ES"
       defer
-    ></script>
-	<script>
-
+    ></script> -->
+    
+	<script> 
 
 
 function initMap() {
+  
             //18.9998822,-98.2019775
             //mapStyle para no visualizar nos nombres de lugares en el mapa.
-            var mapStyle = [
-          {
-            featureType: "poi",
-            elementType: "labels",
-            stylers: [{ visibility: "off" }],
-          },
-        ];
+   var mapStyle = [
+   {
+      featureType: "poi",
+      elementType: "labels",
+      stylers: [{ visibility: "off" }],
+    },
+   ];
      
-
-  const image ="img/bus.svg";
-  const image2 ="img/bicycle.svg";
-  const image3 ="img/bicycleRed.svg";
+  const image ="img/bicycle.svg";
+  const image2 ="img/bicycleRed.svg";
+  const image3 ="img/bicycleGreen.svg";
   const lugar = { lat: 18.9998822, lng: -98.2019775 };
   const map = new google.maps.Map(document.getElementById("map"), {
     scaleControl: true,
@@ -65,76 +65,78 @@ function initMap() {
   });
   const infowindow = new google.maps.InfoWindow();
 
-  const marker = new google.maps.Marker({ map, position: { lat: 18.9981147, lng: -98.1952396 }, icon: image2 });
-  const marker2 = new google.maps.Marker({ map, position: { lat: 19.0003148, lng: -98.1952657 }, icon: image2 });
-  const marker3= new google.maps.Marker({ map, position: { lat: 19.0011248, lng: -98.1972553 }, icon: image2});
-  const marker4= new google.maps.Marker({ map, position: { lat: 19.0015828, lng: -98.1998915 }, icon: image2 });
-  const marker5= new google.maps.Marker({ map, position: { lat: 19.0027278, lng: -98.2024768 }, icon: image2 });
-  const marker6= new google.maps.Marker({ map, position: { lat: 19.0028093, lng: -98.2031376 }, icon: image3 });
-  const marker7= new google.maps.Marker({ map, position: { lat: 19.0035506, lng: -98.2038778 }, icon: image2 });
-  const marker8= new google.maps.Marker({ map, position: { lat: 19.004805, lng: -98.2050865 }, icon: image2 });
-  const marker9= new google.maps.Marker({ map, position: { lat: 19.0049292, lng: -98.2035041 }, icon: image2 });
-  const marker10= new google.maps.Marker({ map, position: { lat: 19.0038878, lng: -98.2017433 }, icon: image2 });
-  const marker11= new google.maps.Marker({ map, position: { lat: 19.0034665, lng: -98.2003851 }, icon: image2 });
-  const marker12= new google.maps.Marker({ map, position: { lat: 19.0027784, lng: -98.1987008 }, icon: image2 });
-  const marker13= new google.maps.Marker({ map, position: { lat: 19.0003055, lng: -98.1944705 }, icon: image2 });
-  const marker14= new google.maps.Marker({ map, position: { lat: 18.9975427, lng: -98.1958934 }, icon: image2 });
-  const marker15= new google.maps.Marker({ map, position: { lat: 18.995904, lng: -98.199642 }, icon: image2 });
-  const marker16= new google.maps.Marker({ map, position: { lat: 18.9958669, lng: -98.2011132 }, icon: image2 });
-  const marker17= new google.maps.Marker({ map, position: { lat: 18.9974691, lng: -98.2019957 }, icon: image2 });
-  const marker18= new google.maps.Marker({ map, position: { lat: 18.999261, lng: -98.2036558 }, icon: image2 });
-  const marker19= new google.maps.Marker({ map, position: { lat: 19.0007156, lng: -98.2025303 }, icon: image2 });
+  <?php
+include 'icondis.php'; // Incluye el archivo funciones.php
+marca(); // Llama a la función para marcar las casetas en el mapa
+marca2();
+marca3();
+marca4();
+marca5();
+marca6();
+marca7();
+marca8();
+marca9();
+marca10();
+marca11();
+marca12();
+marca13();
+marca14();
+marca15();
+marca16();
+marca17();
+marca18();
+marca19();
+?>
 
+ marker.addListener("click", () => {
+   infowindow.setContent("lobo bici DAE");
+   infowindow.open(map, marker);
+ });
 
-  marker.addListener("click", () => {
-    infowindow.setContent("lobo bici DAE");
-    infowindow.open(map, marker);
-  });
+ marker2.addListener("click", () => {
+   infowindow.setContent("lobo bici Cultura Física");
+   infowindow.open(map, marker2);
+ });
 
-  marker2.addListener("click", () => {
-    infowindow.setContent("lobo bici Cultura Física");
-    infowindow.open(map, marker2);
-  });
+ marker3.addListener("click", () => {
+   infowindow.setContent("lobo bici CAALE");
+   infowindow.open(map, marker3);
+ });
 
-  marker3.addListener("click", () => {
-    infowindow.setContent("lobo bici CAALE");
-    infowindow.open(map, marker3);
-  });
+ marker4.addListener("click", () => {
+   infowindow.setContent("lobo bici Administración");
+   infowindow.open(map, marker4);
+ });
 
-  marker4.addListener("click", () => {
-    infowindow.setContent("lobo bici Administración");
-    infowindow.open(map, marker4);
-  });
+ marker5.addListener("click", () => {
+   infowindow.setContent("lobo bici Electrónica");
+   infowindow.open(map, marker5);
+ });
 
-  marker5.addListener("click", () => {
-    infowindow.setContent("lobo bici Electrónica");
-    infowindow.open(map, marker5);
-  });
+ marker6.addListener("click", () => {
+   infowindow.setContent("lobo bici Ingeniería");
+   infowindow.open(map, marker6);
+ });
 
-  marker6.addListener("click", () => {
-    infowindow.setContent("lobo bici Ingeniería");
-    infowindow.open(map, marker6);
-  });
+ marker7.addListener("click", () => {
+   infowindow.setContent("lobo bici Teatro al Aire Libre");
+   infowindow.open(map, marker7);
+ });
 
-  marker7.addListener("click", () => {
-    infowindow.setContent("lobo bici Teatro al Aire Libre");
-    infowindow.open(map, marker7);
-  });
+ marker8.addListener("click", () => {
+   infowindow.setContent("lobo bici Computación / PLU");
+   infowindow.open(map, marker8);
+ });
 
-  marker8.addListener("click", () => {
-    infowindow.setContent("lobo bici Computación / PLU");
-    infowindow.open(map, marker8);
-  });
+ marker9.addListener("click", () => {
+   infowindow.setContent("lobo bici Laboratorios Ciencias Químicas");
+   infowindow.open(map, marker9);
+ });
 
-  marker9.addListener("click", () => {
-    infowindow.setContent("lobo bici Laboratorios Ciencias Químicas");
-    infowindow.open(map, marker9);
-  });
-
-  marker10.addListener("click", () => {
-    infowindow.setContent("lobo bici Instituto de Física");
-    infowindow.open(map, marker10);
-  });
+ marker10.addListener("click", () => {
+   infowindow.setContent("lobo bici Instituto de Física");
+   infowindow.open(map, marker10);
+ });
 
   marker11.addListener("click", () => {
     infowindow.setContent("lobo bici Físico Matemáticas");
@@ -184,6 +186,9 @@ function initMap() {
 }
 
 window.initMap = initMap;
-	</script>
+</script>
+</head>
+<body class="fondo">
+  <div id="map"></div>
 </body>
 </html>
