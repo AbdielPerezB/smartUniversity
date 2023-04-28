@@ -34,11 +34,12 @@ class login extends database{
         //Por defaul el estado es error
         $this->response['status'] = "Error";
         $sql = "SELECT nom, app, apm, email, matricula, estado FROM usuario WHERE email = '{$this->email}' AND pass ='{$this->pass}';";
-        if($result = $this->conexion->query($sql)){
+        if($result = $this->conexion->query($sql))
+        {
             $row = $result->fetch_assoc();
-            //Guardamos todo en el arreglo response
+            //Si el usuario es correcto. Guardamos todo en el arreglo response
             if(!is_null($row)) {
-                $this->response['status'] =  "Success";
+                $this->response['status'] =  "Success";//Cambiamos el estado a Seccess
                 $this->response['message'] = "User exists";
                 $this->response['nom'] = $row['nom'];
                 $this->response['app']=$row['app'];
@@ -46,13 +47,16 @@ class login extends database{
                 $this->response['email']=$row['email'];
                 $this->response['matricula']=$row['matricula'];
                 $this->response['estado']=$row['estado'];
+
             }
-            //$result->free();
-            else{
+            else
+            {
                 $this->response['message'] = "User doesn't exists";
             }
 
-        }else {
+        }
+        else
+        {
             $this->response['message'] = "Query Error in READ: ".mysqli_error($this->conexion);
         }
         $result->free();
