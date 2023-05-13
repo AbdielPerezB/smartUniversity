@@ -21,6 +21,14 @@ estado int,
 correo VARCHAR(50),
 pass VARCHAR(100)
 );
+create table lobobus
+(
+id int not null PRIMARY KEY AUTO_INCREMENT,
+nom varchar (100),
+lt Decimal(10,7),
+lg Decimal(10,7),
+estado int
+);
 
 #0->admin, 1->estudiante, 2->adminLobobus 3->adminLoboBici
 
@@ -54,5 +62,18 @@ INSERT INTO lobobicis(nom,lt,lg,estado) VALUES
 ('Contaduria','18.999261','-98.2036558','1'),
 ('COMDE','19.0007156','-98.2025303','1');
 
+INSERT INTO lobobus(nom,lt,lg,estado) VALUES
+('DAE','18.998155','-98.195292','1'),  
+('Cultura Física','19.000392','-98.195210','1'), 
+('DRH','19.001037','-98.197197','1'),
+('Derecho - Administración','19.001487','-98.199510','1'),
+('Rectoría - Cs. Físico Matemáticas - Cs. Químicas','19.002301','-98.201308','1'),
+('Ingeniería . Cs. de la Electrónica - Arquitectura','19.003079','-98.203022','1'),
+('Ing. Química - Cs. Computación,'19.004390','-98.203628','1'),
+('Puerta - Av. 18 Sur','19.004529','-98.202185','1'),
+('Puerta - Av. 22 Sur','19.0032503','-98.1994408','1'),
+('Puerta - CAALE','19.0019239','-98.1964553','1'),
+('Puerta - Cultura Física','19.0011798','-98.1946392','1'),
+('Av. Central - Av. Escolar,'18.9980973','-98.1957024','1');
 
-#PRUEBA PUSH
+
