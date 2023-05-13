@@ -13,6 +13,15 @@ if( isset($_POST['datos']) ){
     $login->validarLogin();
     $response = $login->getResponse();
 
+    if($response['status'] == 'Success'){
+        session_start();
+        $_SESSION['nom'] = $response['nom'];
+        $_SESSION['app'] = $response['app'];
+        $_SESSION['apm'] = $response['apm'];
+        $_SESSION['email'] = $response['email'];
+        $_SESSION['matricula'] = $response['matricula'];
+    }
+
 }else{
     $response = array();
     $response['status'] = "Error";

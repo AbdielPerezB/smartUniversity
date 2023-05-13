@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="frontend/css/bootstrap.min.css">
-    <link rel="shortcut icon" href="frontend/img/favicon.ico" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon">
     <style>
         .fondo {
-            background-image: url(frontend/img/fondo.png);
+            background-image: url(img/fondo.png);
             background-size: 100%;
             background-repeat: no-repeat;
             background-color: #00385c;
@@ -31,17 +31,17 @@
                     <!-- <form action="valida.php" method="post"> -->
                     <form  id="form-login" method="post">
                         <div class="d-flex justify-content-center">
-                            <img src="frontend/img/perfil2.png" style="max-width: 150px">
+                            <img src="img/perfil2.png" style="max-width: 150px">
                         </div>
                         <div class="input-group mt-4">
                             <div class="input-group-text bg-primary">
-                                <img src="frontend/img/username-icon.svg" alt="username-icon" style="height: 1rem">
+                                <img src="img/username-icon.svg" alt="username-icon" style="height: 1rem">
                             </div>
                             <input class="form-control bg-light" type="text" placeholder="Email" name="Email" id="email">
                         </div>
                         <div class="input-group mt-1">
                             <div class="input-group-text bg-primary">
-                                <img src="frontend/img/password-icon.svg" alt="password-icon" style="height: 1rem">
+                                <img src="img/password-icon.svg" alt="password-icon" style="height: 1rem">
                             </div>
                             <input class="form-control bg-light" type="password" placeholder="Password" name="Password" id="pass" >
                         </div>
@@ -56,7 +56,7 @@
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>
     
-    <script src="frontend/js/bootstrap.min.js"></script>
-    <script src="frontend/js/login.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/login.js"></script>
 </body>
 </html>

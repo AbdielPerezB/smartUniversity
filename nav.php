@@ -22,7 +22,7 @@
                                     <!-- A continuación tambipen le ponemos las clases a las etiquetas a -->
                                     <li><a class="dropdown-item" href="">Mi perfil</a></li>
                                     <li><a class="dropdown-item" href="">Ver usuarios</a></li>
-                                    <li><a class="dropdown-item" href="">Cerrar sesión</a></li>
+                                    <li><a class="dropdown-item" href="./../../salir.php">Cerrar sesión</a></li>
                                 </ul>
                             </li>
                         </ul>

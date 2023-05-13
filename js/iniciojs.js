@@ -1,6 +1,5 @@
 $(document).ready(function(){
     $(".sidebar ul li").on('click' , function(){
-        $(".sidebar ul li.active").removeClass('active');
         $(this).addClass('active')
     });
 
@@ -11,5 +10,6 @@ $(document).ready(function(){
     $(".close-btn").on('click', function(){
         $('.sidebar').removeClass('active');
     });
+
 });
 

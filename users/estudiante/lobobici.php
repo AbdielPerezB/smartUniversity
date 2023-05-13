@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrador Lobobici</title>
+    <title>Estudiante</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="./../../frontend/css/bootstrap.min.css">
@@ -24,7 +24,7 @@
             <?php include "./../../nav.php"; ?>
             <div class="container">
                 <!-- Aqui va el contenido -->
-                <h2>Hola Admin Lobobici</h2>
+                <h2>Calles</h2>
                 
             </div>
 
@@ -38,6 +38,31 @@
     <script src="./../../frontend/js/jquery-3.6.4.js"></script>
     <script src="./../../frontend/js/iniciojs.js"></script>
 
+    <script>
+    $(document).ready(function(){
+        $("#li-lobobici").addClass('active')
+
+        $("li#li-inicio a").on('click' , function(){
+            $(this).attr("href", "index.php")
+        });
+
+        $("li#li-calles a").on('click' , function(){
+            $(this).attr("href", "calles.php")
+        });
+
+        $("li#li-lobobus a").on('click' , function(){
+            $(this).attr("href", "lobobus.php")
+        });
+
+        $("li#li-lobobici a").on('click' , function(){
+            $(this).attr("href", "lobobici.php")
+        });
+
+        $("li#li-horarios a").on('click' , function(){
+            $(this).attr("href", "horarios.php")
+        });
+    });
+</script>
 </body>
 
 </html>

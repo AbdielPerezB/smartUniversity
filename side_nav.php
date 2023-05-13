@@ -9,19 +9,19 @@
                 </button>
             </div>
             <ul class="list-unstyled px-2">
-                <li class="active">
+                <li class="" id="li-inicio">
                     <a href="#" class="text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-house me-1"></i></i>Inicio</a>
                 </li>
-                <li class="">
+                <li class="" id="li-calles">
                     <a href="#" class="text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-road me-1"></i>Dirección de calles</a>
                 </li>
-                <li class="">
+                <li class="" id="li-lobobus">
                     <a href="#" class="text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-bus-simple me-1"></i>Lobobus</a>
                 </li>
-                <li class="">
+                <li class="" id="li-lobobici">
                     <a href="#" class="text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-person-biking me-1"></i>Lobobici</a>
                 </li>
-                <li class="">
+                <li class="" id="li-horarios">
                     <a href="#" class="text-decoration-none px-3 py-2 d-block"><i class="fa-solid fa-chalkboard-user me-1"></i>Horarios de clases</a>
                 </li>
             </ul>
