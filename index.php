@@ -1,4 +1,4 @@
-<?//php header("location: login.php");?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +26,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-light">
             <div class="container-fluid">
                 <div class="d-flex justify-content-between d-block">
-                    <a class="navbar-brand fs-4" href="#"><img src="frontend/img/smartuniversitycomplete.jpg" width="200px" height="" style="position:relative;"></a>
+                    <a class="navbar-brand fs-4" href="#"><img src="img/smartuniversitycomplete.jpg" width="200px" height="" style="position:relative;"></a>
                 </div>
 
                 <!--Botón para la responsividad del nav-->
@@ -64,10 +64,9 @@
 
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"></script>
-    
-      <script src="js/bootstrap2.bundle.min.js"> </script>
+    <!-- scripts de jquery -->
+    <script src="./../../js/jquery-3.6.4.js"></script>
+    <!-- scripts del bootstrap -->
+    <script src="js/bootstrap2.bundle.min.js"> </script>
 </body>
 </html>

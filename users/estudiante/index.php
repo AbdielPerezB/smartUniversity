@@ -1,4 +1,7 @@
-<?php include "./../../seguridad.php";?>
+<?php
+include "./../../seguridad.php";
+include "./verificarlogin.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,30 +41,31 @@
     <script src="./../../js/jquery-3.6.4.js"></script>
     <script src="./../../js/iniciojs.js"></script>
     <script>
-    $(document).ready(function(){
-        $("#li-inicio").addClass('active')
+        $(document).ready(function(){
+            $(".sidebar ul li.active").removeClass('active');
+            $("#li-inicio").addClass('active')
 
-        $("li#li-inicio a").on('click' , function(){
-            $(this).attr("href", "index.php")
-        });
+            $("li#li-inicio a").on('click' , function(){
+                $(this).attr("href", "index.php")
+            });
 
-        $("li#li-calles a").on('click' , function(){
-            $(this).attr("href", "calles.php")
-        });
+            $("li#li-calles a").on('click' , function(){
+                $(this).attr("href", "calles.php")
+            });
 
-        $("li#li-lobobus a").on('click' , function(){
-            $(this).attr("href", "lobobus.php")
-        });
+            $("li#li-lobobus a").on('click' , function(){
+                $(this).attr("href", "lobobus.php")
+            });
 
-        $("li#li-lobobici a").on('click' , function(){
-            $(this).attr("href", "lobobici.php")
-        });
+            $("li#li-lobobici a").on('click' , function(){
+                $(this).attr("href", "lobobici.php")
+            });
 
-        $("li#li-horarios a").on('click' , function(){
-            $(this).attr("href", "horarios.php")
+            $("li#li-horarios a").on('click' , function(){
+                $(this).attr("href", "horarios.php")
+            });
         });
-    });
-</script>
+    </script>
 </body>
 
 </html>

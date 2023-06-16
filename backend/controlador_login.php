@@ -20,6 +20,7 @@ if( isset($_POST['datos']) ){
         $_SESSION['apm'] = $response['apm'];
         $_SESSION['email'] = $response['email'];
         $_SESSION['matricula'] = $response['matricula'];
+        $_SESSION['estado'] = $response['estado'];
     }
 
 }else{

@@ -1,4 +1,7 @@
-<?php include "./../../seguridad.php";?>
+<?php
+include "./../../seguridad.php";
+include "./verificarlogin.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +11,9 @@
     <title>Estudiante</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="./../../frontend/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./../../css/bootstrap.min.css">
     <!-- My css -->
-    <link rel="stylesheet" href="./../../frontend/css/styleInicio.css" />
+    <link rel="stylesheet" href="./../../css/styleInicio.css" />
     <!-- Iconos del fontawesome -->
     <script src="https://kit.fontawesome.com/66c636a4b6.js" crossorigin="anonymous"></script>
 </head>
@@ -33,14 +36,14 @@
     </div>
 
     <!-- Agregamos el js de bootstrap -->
-    <script src="./../../frontend/js/bootstrap2.bundle.min.js"> </script>
+    <script src="./../../js/bootstrap2.bundle.min.js"> </script>
     <!-- scripts de jquery -->
     <script src="./../../js/jquery-3.6.4.js"></script>
-    <script src="./../../frontend/js/iniciojs.js"></script>
+    <script src="./../../js/iniciojs.js"></script>
 
 <script>
     $(document).ready(function(){
-        //$(".sidebar ul li.active").removeClass('active');
+        $(".sidebar ul li.active").removeClass('active');
         $("#li-calles").addClass('active')
 
         $("li#li-inicio a").on('click' , function(){
