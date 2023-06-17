@@ -1,6 +1,6 @@
 <?php
-include "./../../seguridad.php";
-include "./verificarlogin.php";
+//include "./../../seguridad.php";
+//include "./verificarlogin.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
