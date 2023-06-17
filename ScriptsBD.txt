@@ -27,7 +27,6 @@ id int not null PRIMARY KEY AUTO_INCREMENT,
 nom varchar (100),
 lt Decimal(10,7),
 lg Decimal(10,7),
-estado int
 );
 
 #0->admin, 1->estudiante, 2->adminLobobus 3->adminLoboBici
@@ -62,28 +61,28 @@ INSERT INTO lobobicis(nom,lt,lg,estado) VALUES
 ('Contaduria','18.999261','-98.2036558','1'),
 ('COMDE','19.0007156','-98.2025303','1');
 
-INSERT INTO lobobus(nom,lt,lg,estado) VALUES
-('DAE','18.998155','-98.195292','1'),  
-('Cultura Física','19.000392','-98.195210','1'), 
-('DRH','19.001037','-98.197197','1'),
-('Derecho - Administración','19.001487','-98.199510','1'),
-('Rectoría - Cs. Físico Matemáticas - Cs. Químicas','19.002301','-98.201308','1'),
-('Ingeniería . Cs. de la Electrónica - Arquitectura','19.003079','-98.203022','1'),
-('Ing. Química - Cs. Computación,'19.004390','-98.203628','1'),
-('Puerta - Av. 18 Sur','19.004529','-98.202185','1'),
-('Puerta - Av. 22 Sur','19.0032503','-98.1994408','1'),
-('Puerta - CAALE','19.0019239','-98.1964553','1'),
-('Puerta - Cultura Física','19.0011798','-98.1946392','1'),
-('Av. Central - Av. Escolar,'18.9980973','-98.1957024','1'),
-('Estadio','18.997195','-98.196069','1'), 
-('Unidad de Seminarios -  DASU','18.996001','-98.199255','1'),
-('DCyTIC','18.995144','-98.200766','1'),
-('Biblioteca Central','18.995982','-98.201472','1'),
-('Hospital de Pequeñas Especies - Multiaulas','18.997113','-98.203263','1'),
-('Arena BUAP - Contaduría','18.999628','-98.204163','1'),
-('Ingeniería - Arquitectura','19.000940','-98.202893','1'),
-('Biología - ICUAP - DICUFI','19.000344','-98.200719','1'), 
-('Jardín Botánico - Taquillas Estadio','18.998589','-98.196668','1'),
-('Terminal STU','18.997011','-98.195878','1');
+INSERT INTO lobobus(nom,lt,lg) VALUES
+('DAE','18.998155','-98.195292'),  
+('Cultura Física','19.000392','-98.195210'), 
+('DRH','19.001037','-98.197197'),
+('Derecho - Administración','19.001487','-98.199510'),
+('Rectoría - Cs. Físico Matemáticas - Cs. Químicas','19.002301','-98.201308'),
+('Ingeniería . Cs. de la Electrónica - Arquitectura','19.003079','-98.203022'),
+('Ing. Química - Cs. Computación,'19.004390','-98.203628'),
+('Puerta - Av. 18 Sur','19.004529','-98.202185'),
+('Puerta - Av. 22 Sur','19.0032503','-98.1994408'),
+('Puerta - CAALE','19.0019239','-98.1964553'),
+('Puerta - Cultura Física','19.0011798','-98.1946392'),
+('Av. Central - Av. Escolar,'18.9980973','-98.1957024'),
+('Estadio','18.997195','-98.196069'), 
+('Unidad de Seminarios -  DASU','18.996001','-98.199255'),
+('DCyTIC','18.995144','-98.200766'),
+('Biblioteca Central','18.995982','-98.201472'),
+('Hospital de Pequeñas Especies - Multiaulas','18.997113','-98.203263'),
+('Arena BUAP - Contaduría','18.999628','-98.204163'),
+('Ingeniería - Arquitectura','19.000940','-98.202893'),
+('Biología - ICUAP - DICUFI','19.000344','-98.200719'), 
+('Jardín Botánico - Taquillas Estadio','18.998589','-98.196668'),
+('Terminal STU','18.997011','-98.195878');
 
 
