@@ -33,6 +33,9 @@
       height: 550px;
       width: 800px;
     }
+    #main-space{
+        background-color: white;
+    }
 	</style>
 
 </head>
@@ -41,21 +44,29 @@
         <?php include "./../../side_nav.php"; ?>
 
         <!-- Content -->
-        <div class="content ">
+        <div class="content">
             <!-- navbarHorizontal -->
             <?php include "./../../nav.php"; ?>
-            <div class="container">
+            <div id="main-space" class="container">
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-8">
-                        <select class="form-select form-select-md mb-3 mt-3" aria-label=".form-select-lg example">
-                            <option selected>Seleccione caseta</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select id="opciones" class="form-select form-select-md mb-3 mt-3" aria-label=".form-select-lg example">
+                            <option value="0" selected>Todas las casetas</option>
+                        <?php
+                            include_once __DIR__.'/../../backend/class/post.php';
+
+                            $query = "SELECT id, nom FROM lobobicis ORDER BY nom;";
+                            $lobobicis = new Post($query);
+                            $response = $lobobicis->getResponse();
+                            foreach($response as $row)
+                            {
+                                echo"<option value='".$row['id']."'>".$row['nom']."</option>";
+                            }
+                        ?>
                         </select>
                     </div> 
                 </div>
-                <div class="row d-flex justify-content-start">
+                <div id="simbologia-mapa" class="row d-flex justify-content-start">
                     <div id="simbologia" class="col-lg-3 col-xl-3 col-md-12 col-sm-12">
                         <table>
                             <tr>
@@ -70,10 +81,15 @@
                     </div>
                     <div id="map" class= "col-lg-8 col-xl-8 col-md-12 col-sm-12 me-4"></div>
                 </div>
-                <div class="row">
+                <div id="oneCaseta">
+                    <div class="card bg-success text-white" style="width: 18rem;">
+                        <img src="./../../img/caseta.jpg" class="card-img-top" alt="...">
+                        <div class="card-body bg-succes">
+                            <h5 class="card-title">Caseta</h5>
+                            <p class="card-text">Cerrada</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- Aqui va el contenido -->
-                
             </div>
         </div>
     </div>
@@ -111,6 +127,7 @@
     <!-- scripts de jquery -->
     <script src="./../../js/jquery-3.6.4.js"></script>
     <script src="./../../js/iniciojs.js"></script>
+    <script src="./../../js/selectCasetaLobobici.js" ></script>
 
     <script>
     $(document).ready(function(){
