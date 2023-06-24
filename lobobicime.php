@@ -23,23 +23,26 @@
 
 <body class="fondo">
     <div class="container col-sm-5 mb-3 mt-3">
+    <!-- <div class="container col-sm-5 col-xs-12 mb-3 mt-3"> -->
         <?php
         include("menu.php");
+        include("modelo/conexion_bd.php");
+        include("class/controlador_eliminar_lobobici.php");
         include("lista_desp.php");
-        // include("modelo/conexion_bd.php");
-        // include("class/controlador_registrar_lobobicis.php");
+
         ?>
         <div class="row">
             <form method="post" action="">
-                <div class="form-floating mb-3 mt-3">
-                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                <div class="form-floating mb-3 mt-3 ">
+                    <select class="form-select" id="mi-select" name="mi-select" aria-label="multiple select example">
                         <?php echo $option_del_select; ?>
                     </select>
                     <label for="floatingSelect">Seleccione una Caseta</label>
                 </div>
 
                 <div class="mb-5 d-grid">
-                    <button class="btn btn-primary" onclick="">Eliminar</button>
+                    <!-- <button class="btn btn-primary" onclick="">Eliminar</button> -->
+                    <input class="btn btn-primary form-control" type="submit" value="Eliminar" name="eliminar">
                 </div>
 
 
@@ -47,7 +50,9 @@
             </form>
         </div>
     </div>
-    </script>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    
     <script>
         $(document).ready(function () {
             $("#btn1").attr("disable", true);
@@ -64,7 +69,10 @@
         function eliminar() {
             location.href = "lobobicime.php"
         }
-    </script>
+        function abrir() {
+            location.href = "lobobicio.php"
+        }
+        
     </script>
 </body>
 
