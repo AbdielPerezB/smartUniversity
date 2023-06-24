@@ -163,7 +163,12 @@ if (empty($_SESSION["id"])) {
     }
     function eliminar() {
       location.href = "lobobicime.php"
-    }  
+    }
+    function abrir() {
+      location.href = "lobobicio.php"
+    }
+    
   </script>
 </body>
+
 </html>

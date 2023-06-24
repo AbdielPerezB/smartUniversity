@@ -4,6 +4,7 @@ if (empty($_SESSION["id"])) {
   header("location: login.php");
 }
 ?>
+
 <html dir="ES">
 
 <head>
@@ -52,6 +53,11 @@ if (empty($_SESSION["id"])) {
       margin: 0;
       padding: 0;
     }
+
+    /* Para Ocultar Boton de Modificar */
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
 </head>
@@ -63,7 +69,7 @@ if (empty($_SESSION["id"])) {
       $idItem = isset($_GET["x"]) ? $_GET["x"] : "2";
       include("menu.php");
       include("modelo/conexion_bd.php");
-      // include("class/controlador_modificar_lobobicis.php");
+      include("class/controlador_modificar_lobobicis.php");
       include("lista_desp.php");
 
       ?>
@@ -75,20 +81,28 @@ if (empty($_SESSION["id"])) {
             <select class="form-select" id="mi-select" name="mi-select" aria-label="Floating label select example"
               onchange="selectItem()">
               <?php
-
               echo $option_del_select;
+              $opcionSeleccionada = $_POST['mi-select']; // Obtener la opción seleccionada del select
+              $id = $opcionSeleccionada;
+
+              // Obtener los datos del registro seleccionado
+              $sql = "SELECT * FROM lobobicis WHERE id = '$id'";
+              $result = mysqli_query($link, $sql);
+              $row = mysqli_fetch_assoc($result);
+
+              $nom = $row["nom"];
+              $lt = $row["lt"];
+              $lg = $row["lg"];
+
+              mysqli_close($link);
               ?>
             </select>
-
+            <div class="mb-1 mt-1">
+              <input class="btn btn-success" type="submit" value="Enviar">
+            </div>
             <label for="floatingSelect">Seleccione una Caseta</label>
           </div>
 
-          <input class="btn btn-success form-control" type="submit" value="Modificar" name="modificar">
-          <!-- <input class="btn btn-success form-control" value="Modificar" name="modificar" data-bs-toggle="modal" data-bs-target="#modalModificar"> -->
-
-          <?php
-          include("class/controlador_modificar_lobobicis.php");
-          ?>
           <div class="mb-3 mt-3">
             <label for="nom" class="form-label">Nombre:</label>
             <input type="text" class="form-control" id="nom" name="nom" value="<?php echo $nom ?>">
@@ -107,65 +121,20 @@ if (empty($_SESSION["id"])) {
             <div id="map"></div>
           </div>
 
-
+          <body>
+            <input id="btnGuardarCambios" class="btn btn-success form-control" type="submit" value="Guardar Cambios"
+              name="guardarCambios" style="margin-bottom: 30px;">
+          </body>
         </form>
       </div>
     </div>
   </div>
-
-  <body>
-
-    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalModificar">
-      Modificar
-    </button> -->
-
-
-    <div class="modal fade" id="modalModificar" tabindex="-1" aria-labelledby="modalModificar" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="TituloModal" id="modalModificar">Modificar</h5>
-            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-          </div>
-          <div class="modal-body">
-            <div class="mb-3 mt-3">
-              <label for="nom" class="form-label">Nombre:</label>
-              <input type="text" class="form-control" id="nom" name="nom" value="<?php echo $nom ?>">
-            </div>
-            <div class="mb-3 mt-3">
-              <label for="lt" class="form-label">Mueva el icono a la ubicación de la caseta:</label>
-              <input type="hidden" class="form-control" id="lt" name="lt" value="<?php echo $lt ?>">
-            </div>
-            <div class="mb-3 mt-3">
-              <input type="hidden" class="form-control" id="lg" name="lg" value="<?php echo $lg ?>">
-            </div>
-            <div class="mb-3 mt-3" style="display: none;">
-              <input type="hidden" class="form-control" id="estado" value="1" name="estado">
-            </div>
-            <div class="mb-3 mt-3">
-              <div id="map"></div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary">Guardar Cambios </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
-  <!-- <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjb7q0iaGczXVMR75hiNFyNb-hsbH0Xm8&v=weekly&language=es&region=ES"
-    defer></script> -->
   <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjb7q0iaGczXVMR75hiNFyNb-hsbH0Xm8&callback=initMap&v=weekly&language=es&region=ES"
     defer></script>
   <script src="js/jquery-3.6.3.min.js"></script>
   <script src="js/bootstrap.js"></script>
   <script>
-    // $('#modalModificar').on('shown.bs.Modal', function()){
-    //   initMap();
-    // }
     function initMap() {
       //18.9998822,-98.2019775
 
@@ -226,6 +195,10 @@ if (empty($_SESSION["id"])) {
     function eliminar() {
       location.href = "lobobicime.php"
     }
+    function abrir() {
+      location.href = "lobobicio.php"
+    }
+    
 
     function selectItem() {
       var x = $("#mi-select").val();

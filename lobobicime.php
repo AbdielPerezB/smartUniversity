@@ -23,6 +23,7 @@
 
 <body class="fondo">
     <div class="container col-sm-5 mb-3 mt-3">
+    <!-- <div class="container col-sm-5 col-xs-12 mb-3 mt-3"> -->
         <?php
         include("menu.php");
         include("modelo/conexion_bd.php");
@@ -51,6 +52,7 @@
     </div>
     <script src="js/jquery-3.6.3.min.js"></script>
     <script src="js/bootstrap.js"></script>
+    
     <script>
         $(document).ready(function () {
             $("#btn1").attr("disable", true);
@@ -67,6 +69,10 @@
         function eliminar() {
             location.href = "lobobicime.php"
         }
+        function abrir() {
+            location.href = "lobobicio.php"
+        }
+        
     </script>
 </body>
 
