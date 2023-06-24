@@ -13,14 +13,24 @@ $(document).ready(function(){
                 type: 'POST',
                 data: {opc},// abreviatura de: data: {search: search},
                 success: function(response){
-                    //console.log(response);
+                    console.log(response);
                     let bici = JSON.parse(response)[0];//lo convertimos a objeto de java
-                    console.log(bici.nom);
-                    console.log(bici.estado);
                     let estadoBici = bici.estado == 1 ? "Abierta" : "Cerrada";
                     $('.card-title').text(bici.nom);
                     $('.card-text').text(estadoBici);
-                    
+
+                    //removemos clases que ya no se ocupan
+                    $('.card').removeClass('card-disponible');
+                    $('.card').removeClass('card-noDisponible');
+                    //Asignamos el estilo de acuerdo a la caseta cerrada o abierta
+                    if(bici.estado == 1)
+                    {
+                        $('.card').addClass('card-disponible');
+                    }
+                    else
+                    {
+                        $('.card').addClass('card-noDisponible');
+                    }
                     $('#map').hide();
                     $('#simbologia').hide();
                     $('#oneCaseta').show();

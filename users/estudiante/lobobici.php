@@ -22,19 +22,19 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY"></script>
 
-    <style>
-    /*.fondo{
-      background-image: url(img/fondo.png);
-      background-size: 100%;
-      background-repeat: no-repeat, no-repeat;
-      background-color: #00385c;
-    }*/   
+    <style>   
     #map {
       height: 550px;
       width: 800px;
     }
     #main-space{
         background-color: white;
+    }
+    .card-disponible{
+        border-color: #2ECC71;
+    }
+    .card-noDisponible{
+        border-color: red;
     }
 	</style>
 
@@ -81,8 +81,9 @@
                     </div>
                     <div id="map" class= "col-lg-8 col-xl-8 col-md-12 col-sm-12 me-4"></div>
                 </div>
+                
                 <div id="oneCaseta">
-                    <div class="card bg-success text-white" style="width: 18rem;">
+                    <div class="card" style="width: 18rem;">
                         <img src="./../../img/caseta.jpg" class="card-img-top" alt="...">
                         <div class="card-body bg-succes">
                             <h5 class="card-title">Caseta</h5>
