@@ -4,7 +4,7 @@ $idItem = isset($_GET["x"]) ? $_GET["x"] : "x";
 if ($validar_DB = "si") 
 {
     $option_del_select = "";
-    $sql1 = "select * from lobobicis order by nom";
+    $sql1 = "select * from lobobicis where eliminado = 0 order by nom";
     if ($result = mysqli_query($link, $sql1)) 
     {
         $cont_nom = mysqli_num_rows($result);

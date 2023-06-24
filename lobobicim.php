@@ -1,9 +1,4 @@
-<?php
-session_start();
-if (empty($_SESSION["id"])) {
-  header("location: login.php");
-}
-?>
+
 
 <html dir="ES">
 
@@ -36,6 +31,7 @@ if (empty($_SESSION["id"])) {
       padding-left: 20px;
       padding-bottom: 50px;
       box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+      height: 120%;
     }
 
     .fondo {}
@@ -64,7 +60,7 @@ if (empty($_SESSION["id"])) {
 
 <body class="fondo">
   <div class="container col-sm-5 mb-3 mt-3">
-    <div class="contenedor1 ">
+    <div class="contenedor">
       <?php
       $idItem = isset($_GET["x"]) ? $_GET["x"] : "2";
       include("menu.php");
@@ -182,9 +178,6 @@ if (empty($_SESSION["id"])) {
     $(document).ready(function () {
       $("#btn1").attr("disable", true);
     });
-    function salir() {
-      location.href = "salir.php"
-    }
     function agregar() {
       location.href = "lobobicima.php"
 

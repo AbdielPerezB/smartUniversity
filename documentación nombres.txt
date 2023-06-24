@@ -1,0 +1,7 @@
+lista_desp ->Select para ver las casetas
+lobobicim -> Modificar (Usa: class/controlador_modificar_bobobici.php)
+lobobicima ->agregar (Usa: class/controlador_registrar_bobobici.php)
+lobobicime -> eliminar (Usa: class/controlador_eliminar_bobobici.php)
+lobobicio -> abrir y cerrar
+menu -> los botones de navegación
+status -> consulta a bd estados de casetas (se muestra en lobobicio)

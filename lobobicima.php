@@ -1,8 +1,8 @@
 <?php
-session_start();
-if (empty($_SESSION["id"])) {
-  header("location: login.php");
-}
+//session_start();
+//if (empty($_SESSION["id"])) {
+//  header("location: login.php");
+//}
 ?>
 <html dir="es">
 
@@ -37,6 +37,7 @@ if (empty($_SESSION["id"])) {
       padding-left: 20px;
       padding-bottom: 50px;
       box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+      height: 110%;
     }
 
     .fondo {}
@@ -59,7 +60,7 @@ if (empty($_SESSION["id"])) {
 
 <body class="fondo">
   <div class="container col-sm-5 mb-3 mt-3">
-    <div class="contenedor1 ">
+    <div class="contenedor">
       <?php
       include("menu.php");
       include("modelo/conexion_bd.php");
