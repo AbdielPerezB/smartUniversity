@@ -7,7 +7,7 @@ abstract class database{
         $this->conexion = @mysqli_connect(
                             'localhost',//'localhost',
                             'root',//'root',
-                            'nora2040',//'nora2040',
+                            'nora2040',//'nora2040,
                             'smartuniversity'//'smartuniversity'
                         );
         if(!$this->conexion){

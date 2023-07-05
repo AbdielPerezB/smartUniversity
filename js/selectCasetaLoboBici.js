@@ -1,6 +1,7 @@
 $(document).ready(function(){
     //Oculta por default la sección donde se muestra una única caseta
     $('#oneCaseta').hide();
+    $('#mapa-una-caseta').hide();
 
     //Si el usuario selecciona una lista de la caseta se dispara la función
     $('#opciones').change(function(e){
@@ -13,13 +14,14 @@ $(document).ready(function(){
                 type: 'POST',
                 data: {opc},// abreviatura de: data: {search: search},
                 success: function(response){
-                    console.log(response);
                     let bici = JSON.parse(response)[0];//lo convertimos a objeto de java
                     let estadoBici = bici.estado == 1 ? "Abierta" : "Cerrada";
+                    console.log(bici);
+
+                    //Colocamos los datos de la bici en la card
                     $('.card-title').text(bici.nom);
                     $('.card-text').text(estadoBici);
-
-                    //removemos clases que ya no se ocupan
+                    //removemos el estilo de la card que tenga anteriormente
                     $('.card').removeClass('card-disponible');
                     $('.card').removeClass('card-noDisponible');
                     //Asignamos el estilo de acuerdo a la caseta cerrada o abierta
@@ -34,12 +36,14 @@ $(document).ready(function(){
                     $('#map').hide();
                     $('#simbologia').hide();
                     $('#oneCaseta').show();
+                    $('#mapa-una-caseta').show();
                 }
             });
         }
         else
         {
             $('#oneCaseta').hide();
+            $('#mapa-una-caseta').show();
             $('#map').show();
             $('#simbologia').show();
         }

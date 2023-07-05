@@ -20,14 +20,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY"></script>
 
     <style>   
     #map {
       height: 550px;
       width: 800px;
     }
-    #main-space{
+    #mapa-una-caseta {
+      height: 550px;
+      width: 800px;
+    }
+    body{
         background-color: white;
     }
     .card-disponible{
@@ -47,7 +50,7 @@
         <div class="content">
             <!-- navbarHorizontal -->
             <?php include "./../../nav.php"; ?>
-            <div id="main-space" class="container">
+            <div class="container">
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-8">
                         <select id="opciones" class="form-select form-select-md mb-3 mt-3" aria-label=".form-select-lg example">
@@ -66,7 +69,7 @@
                         </select>
                     </div> 
                 </div>
-                <div id="simbologia-mapa" class="row d-flex justify-content-start">
+                <div class="row d-flex justify-content-start">
                     <div id="simbologia" class="col-lg-3 col-xl-3 col-md-12 col-sm-12">
                         <table>
                             <tr>
@@ -81,20 +84,25 @@
                     </div>
                     <div id="map" class= "col-lg-8 col-xl-8 col-md-12 col-sm-12 me-4"></div>
                 </div>
-                
-                <div id="oneCaseta">
-                    <div class="card" style="width: 18rem;">
-                        <img src="./../../img/caseta.jpg" class="card-img-top" alt="...">
-                        <div class="card-body bg-succes">
-                            <h5 class="card-title">Caseta</h5>
-                            <p class="card-text">Cerrada</p>
+                <div class="row">
+                    <div id="oneCaseta"  style="background: green;">
+                        <div class="card" style="width: 18rem;" >
+                            <img src="./../../img/caseta.jpg" class="card-img-top" alt="...">
+                            <div class="card-body bg-succes">
+                                <h5 class="card-title">Caseta</h5>
+                                <p class="card-text">Cerrada</p>
+                            </div>
                         </div>
                     </div>
+                    <div id="mapa-una-caseta"></div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjb7q0iaGczXVMR75hiNFyNb-hsbH0Xm8&callback=initMap&v=weekly&language=es&region=ES" defer></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjb7q0iaGczXVMR75hiNFyNb-hsbH0Xm8&callback=initMap&v=weekly&language=es&region=ES"
+        defer>
+    </script>
     <script> 
     function initMap() {
       //18.9998822,-98.2019775
@@ -119,9 +127,30 @@
         include 'icondis.php'; // Incluye el archivo funciones.php
         marca(); // Llama a la función para marcar las casetas en el mapa
       ?>
+
+      //Mapa 2
+      const lugar2 = { lat: 18.9998822, lng: -98.2019775 };
+      const map2 = new google.maps.Map(document.getElementById("mapa-una-caseta"), {
+        scaleControl: true,
+        center: lugar2,
+        zoom: 17
+      });
+      //const infowindow = new google.maps.InfoWindow();
+      marker = new google.maps.Marker({
+        map2,
+        draggable: false,
+        animation: google.maps.Animation.DROP,
+        position: { lat: 18.9998822, lng: -98.2019775 }
+      });
+      
+
     }
     window.initMap = initMap;
     </script>
+    
+    
+
+
 
     <!-- Agregamos el js de bootstrap -->
     <script src="./../../js/bootstrap2.bundle.min.js"> </script>
