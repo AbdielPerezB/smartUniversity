@@ -13,8 +13,8 @@ if (empty($_SESSION["id"])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agregar Caseta</title>
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon">
+  <link rel="stylesheet" href="./../../css/bootstrap.min.css">
+  <link rel="shortcut icon" href="./../../img/favicon.ico" type="image/vnd.microsoft.icon">
 
 
   <style>
@@ -39,6 +39,7 @@ if (empty($_SESSION["id"])) {
       padding-left: 20px;
       padding-bottom: 50px;
       box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+      height: 110%;
     }
 
     .fondo {}
@@ -61,7 +62,7 @@ if (empty($_SESSION["id"])) {
 
 <body class="fondo">
   <div class="container col-sm-5 mb-3 mt-3">
-    <div class="contenedor1 ">
+    <div class="contenedor">
       <?php
       include("menu.php");
       include("modelo/conexion_bd.php");
@@ -94,10 +95,7 @@ if (empty($_SESSION["id"])) {
           </div>
           <!-- <button type="Button" class="btn btn-primary form-control"onclick="enviar()">Crear</button> -->
           <input class="btn btn-primary form-control" type="submit" value="Crear" name="crear">
-
         </form>
-        <!-- </div> -->
-        <div class="col-12 col-sm-4"></div>
       </div>
     </div>
   </div>
@@ -105,8 +103,8 @@ if (empty($_SESSION["id"])) {
   <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjb7q0iaGczXVMR75hiNFyNb-hsbH0Xm8&callback=initMap&v=weekly&language=es&region=ES"
     defer></script>
-  <script src="js/jquery-3.6.3.min.js"></script>
-  <script src="js/bootstrap.js"></script>
+  <script src="./../../js/jquery-3.6.3.min.js"></script>
+  <script src="./../../js/bootstrap.js"></script>
   <script>
 
     function initMap() {
@@ -168,7 +166,12 @@ if (empty($_SESSION["id"])) {
     }
     function eliminar() {
       location.href = "lobobicime.php"
-    }  
+    }
+    function abrir() {
+      location.href = "lobobicio.php"
+    }
+    
   </script>
 </body>
+
 </html>

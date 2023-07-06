@@ -4,7 +4,7 @@ function marca() {
   $conexion = mysqli_connect("localhost", "root", "nora2040", "smartuniversity", "3306");
 
   // Realizar la consulta SQL para obtener los datos de las instancias
-  $resultado = mysqli_query($conexion, "SELECT * FROM lobobicis");
+  $resultado = mysqli_query($conexion, "SELECT * FROM lobobicis WHERE eliminado = 0");
 
   // Inicializar un contador para asignar un identificador único a cada marcador
   $contador = 0;

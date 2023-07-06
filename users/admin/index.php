@@ -50,11 +50,13 @@
             });
 
             $("li#li-calles a").on('click' , function(){
-                $(this).attr("href", "calles.php")
+                //$(this).attr("href", "calles.php")
+                alert('No implemented');
             });
 
             $("li#li-lobobus a").on('click' , function(){
-                $(this).attr("href", "lobobus.php")
+                //$(this).attr("href", "lobobus.php")
+                alert('No implemented');
             });
 
             $("li#li-lobobici a").on('click' , function(){

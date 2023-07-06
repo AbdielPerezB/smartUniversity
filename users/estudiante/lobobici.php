@@ -58,7 +58,7 @@
                         <?php
                             include_once __DIR__.'/../../backend/class/post.php';
 
-                            $query = "SELECT id, nom FROM lobobicis ORDER BY nom;";
+                            $query = "SELECT id, nom FROM lobobicis WHERE eliminado = 0 ORDER BY nom;";
                             $lobobicis = new Post($query);
                             $response = $lobobicis->getResponse();
                             foreach($response as $row)
@@ -160,30 +160,30 @@
     <script src="./../../js/selectCasetaLobobici.js" ></script>
 
     <script>
-    $(document).ready(function(){
-        $("#li-lobobici").addClass('active')
+        $(document).ready(function(){
+            $("#li-lobobici").addClass('active')
 
-        $("li#li-inicio a").on('click' , function(){
-            $(this).attr("href", "index.php")
-        });
+            $("li#li-inicio a").on('click' , function(){
+                $(this).attr("href", "index.php")
+            });
 
-        $("li#li-calles a").on('click' , function(){
-            $(this).attr("href", "calles.php")
-        });
+            $("li#li-calles a").on('click' , function(){
+                $(this).attr("href", "calles.php")
+            });
 
-        $("li#li-lobobus a").on('click' , function(){
-            $(this).attr("href", "lobobus.php")
-        });
+            $("li#li-lobobus a").on('click' , function(){
+                $(this).attr("href", "lobobus.php")
+            });
 
-        $("li#li-lobobici a").on('click' , function(){
-            $(this).attr("href", "lobobici.php")
-        });
+            $("li#li-lobobici a").on('click' , function(){
+                $(this).attr("href", "lobobici.php")
+            });
 
-        $("li#li-horarios a").on('click' , function(){
-            $(this).attr("href", "horarios.php")
+            $("li#li-horarios a").on('click' , function(){
+                $(this).attr("href", "horarios.php")
+            });
         });
-    });
-</script>
+    </script>
 </body>
 
 </html>
