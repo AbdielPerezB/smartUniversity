@@ -1,5 +1,3 @@
-
-
 <html dir="ES">
 
 <head>
@@ -7,7 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Modificar Caseta</title>
+  <!-- Bootstrap -->
   <link rel="stylesheet" href="./../../css/bootstrap.min.css">
+  <!-- My css -->
+  <link rel="stylesheet" href="./../../css/styleInicio.css" />
+  <!-- Iconos del fontawesome -->
+  <script src="https://kit.fontawesome.com/66c636a4b6.js" crossorigin="anonymous"></script>
   <link rel="shortcut icon" href="./../../img/favicon.ico" type="image/vnd.microsoft.icon">
   <style>
     #map {
@@ -59,72 +62,84 @@
 </head>
 
 <body class="fondo">
-  <div class="container col-sm-5 mb-3 mt-3">
-    <div class="contenedor">
-      <?php
-      $idItem = isset($_GET["x"]) ? $_GET["x"] : "2";
-      include("menu.php");
-      include("modelo/conexion_bd.php");
-      include("class/controlador_modificar_lobobicis.php");
-      include("lista_desp.php");
+  <div class="main-container d-flex">
+    <?php include __DIR__ . "/../../side_nav.php"; ?>
+    <!-- Content -->
+    <div class="content ">
+      <!-- navbarHorizontal -->
+      <?php include __DIR__ . "/../../nav.php"; ?>
+      <div class="container">
+        <!-- Aqui va el contenido -->
+        <div class="container col-sm-5 mb-3 mt-3">
+          <div class="contenedor">
+            <?php
+            $idItem = isset($_GET["x"]) ? $_GET["x"] : "2";
+            include("menu.php");
+            include("modelo/conexion_bd.php");
+            include("class/controlador_modificar_lobobicis.php");
+            include("lista_desp.php");
 
-      ?>
+            ?>
 
-      <div class="row">
-        <form method="post" action="">
-          <!-- <div class="d-grid contenedor"> -->
-          <div class="form-floating mb-3 mt-3">
-            <select class="form-select" id="mi-select" name="mi-select" aria-label="Floating label select example"
-              onchange="selectItem()">
-              <?php
-              echo $option_del_select;
-              $opcionSeleccionada = $_POST['mi-select']; // Obtener la opción seleccionada del select
-              $id = $opcionSeleccionada;
+            <div class="row">
+              <form method="post" action="">
+                <!-- <div class="d-grid contenedor"> -->
+                <div class="form-floating mb-3 mt-3">
+                  <select class="form-select" id="mi-select" name="mi-select" aria-label="Floating label select example"
+                    onchange="selectItem()">
+                    <?php
+                    echo $option_del_select;
+                    $opcionSeleccionada = $_POST['mi-select']; // Obtener la opción seleccionada del select
+                    $id = $opcionSeleccionada;
 
-              // Obtener los datos del registro seleccionado
-              $sql = "SELECT * FROM lobobicis WHERE id = '$id'";
-              $result = mysqli_query($link, $sql);
-              $row = mysqli_fetch_assoc($result);
+                    // Obtener los datos del registro seleccionado
+                    $sql = "SELECT * FROM lobobicis WHERE id = '$id'";
+                    $result = mysqli_query($link, $sql);
+                    $row = mysqli_fetch_assoc($result);
 
-              $nom = $row["nom"];
-              $lt = $row["lt"];
-              $lg = $row["lg"];
+                    $nom = $row["nom"];
+                    $lt = $row["lt"];
+                    $lg = $row["lg"];
 
-              mysqli_close($link);
-              ?>
-            </select>
-            <div class="mb-1 mt-1">
-              <input class="btn btn-success" type="submit" value="Enviar">
+                    mysqli_close($link);
+                    ?>
+                  </select>
+                  <div class="mb-1 mt-1">
+                    <input class="btn btn-success" type="submit" value="Enviar">
+                  </div>
+                  <label for="floatingSelect">Seleccione una Caseta</label>
+                </div>
+
+                <div class="mb-3 mt-3">
+                  <label for="nom" class="form-label">Nombre:</label>
+                  <input type="text" class="form-control" id="nom" name="nom" value="<?php echo $nom ?>">
+                </div>
+                <div class="mb-3 mt-3">
+                  <label for="lt" class="form-label">Mueva el icono a la ubicación de la caseta:</label>
+                  <input type="hidden" class="form-control" id="lt" name="lt" value="<?php echo $lt ?>">
+                </div>
+                <div class="mb-3 mt-3">
+                  <input type="hidden" class="form-control" id="lg" name="lg" value="<?php echo $lg ?>">
+                </div>
+                <div class="mb-3 mt-3" style="display: none;">
+                  <input type="hidden" class="form-control" id="estado" value="1" name="estado">
+                </div>
+                <div class="mb-3 mt-3">
+                  <div id="map"></div>
+                </div>
+
+                <body>
+                  <input id="btnGuardarCambios" class="btn btn-success form-control" type="submit"
+                    value="Guardar Cambios" name="guardarCambios" style="margin-bottom: 30px;">
+                </body>
+              </form>
             </div>
-            <label for="floatingSelect">Seleccione una Caseta</label>
           </div>
-
-          <div class="mb-3 mt-3">
-            <label for="nom" class="form-label">Nombre:</label>
-            <input type="text" class="form-control" id="nom" name="nom" value="<?php echo $nom ?>">
-          </div>
-          <div class="mb-3 mt-3">
-            <label for="lt" class="form-label">Mueva el icono a la ubicación de la caseta:</label>
-            <input type="hidden" class="form-control" id="lt" name="lt" value="<?php echo $lt ?>">
-          </div>
-          <div class="mb-3 mt-3">
-            <input type="hidden" class="form-control" id="lg" name="lg" value="<?php echo $lg ?>">
-          </div>
-          <div class="mb-3 mt-3" style="display: none;">
-            <input type="hidden" class="form-control" id="estado" value="1" name="estado">
-          </div>
-          <div class="mb-3 mt-3">
-            <div id="map"></div>
-          </div>
-
-          <body>
-            <input id="btnGuardarCambios" class="btn btn-success form-control" type="submit" value="Guardar Cambios"
-              name="guardarCambios" style="margin-bottom: 30px;">
-          </body>
-        </form>
+        </div>
       </div>
     </div>
   </div>
+
   <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjb7q0iaGczXVMR75hiNFyNb-hsbH0Xm8&callback=initMap&v=weekly&language=es&region=ES"
     defer></script>
@@ -177,6 +192,31 @@
   <script>
     $(document).ready(function () {
       $("#btn1").attr("disable", true);
+      $("#li-lobobici").addClass('active')//En cada sección cambiar li-inicio por el que corresponda
+
+      $("li#li-inicio a").on('click', function () {
+        $(this).attr("href", "index.php");
+      });
+
+      $("li#li-calles a").on('click', function () {
+        //$(this).attr("href", "calles.php")
+        alert('No implemented');
+      });
+
+      $("li#li-lobobus a").on('click', function () {
+        //$(this).attr("href", "lobobus.php")
+        alert('No implemented');
+      });
+
+      $("li#li-lobobici a").on('click', function () {
+        //$(this).attr("href", "lobobici.php")
+        alert('No implemented');
+      });
+
+      $("li#li-horarios a").on('click', function () {
+        //$(this).attr("href", "horarios.php")
+        alert('No implemented');
+      });
     });
     function agregar() {
       location.href = "lobobicima.php"
@@ -191,7 +231,7 @@
     function abrir() {
       location.href = "lobobicio.php"
     }
-    
+
 
     function selectItem() {
       var x = $("#mi-select").val();

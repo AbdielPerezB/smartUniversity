@@ -16,6 +16,11 @@ if (empty($_SESSION["id"])) {
   <link rel="stylesheet" href="./../../css/bootstrap.min.css">
   <link rel="shortcut icon" href="./../../img/favicon.ico" type="image/vnd.microsoft.icon">
 
+  <!-- Para el side_nav -->
+  <link rel="stylesheet" href="./../../css/styleInicio.css" />
+  <!-- Iconos del fontawesome -->
+  <script src="https://kit.fontawesome.com/66c636a4b6.js" crossorigin="anonymous"></script>
+
 
   <style>
     #map {
@@ -61,44 +66,58 @@ if (empty($_SESSION["id"])) {
 </head>
 
 <body class="fondo">
-  <div class="container col-sm-5 mb-3 mt-3">
-    <div class="contenedor">
-      <?php
-      include("menu.php");
-      include("modelo/conexion_bd.php");
-      include("class/controlador_registrar_lobobicis.php");
-      ?>
-      <div class="row">
-        <!-- <div class="col-12 col-sm-4"></div>
+  <div class="main-container d-flex">
+    <?php include __DIR__ . "/../../side_nav.php"; ?>
+    <!-- Content -->
+    <div class="content ">
+      <!-- navbarHorizontal -->
+      <?php include __DIR__ . "/../../nav.php"; ?>
+      <div class="container">
+        <!-- Aqui va el contenido -->
+        <div class="container col-sm-5 mb-3 mt-3">
+          <div class="contenedor">
+            <?php
+            include("menu.php");
+            include("modelo/conexion_bd.php");
+            include("class/controlador_registrar_lobobicis.php");
+            ?>
+            <div class="row">
+              <!-- <div class="col-12 col-sm-4"></div>
                     <div class="col-12 col-sm-4"> -->
-        <form method="post" action="">
+              <form method="post" action="">
 
-          <div class="mb-3 mt-3">
-            <label for="nom" class="form-label">Nombre:</label>
-            <input type="text" class="form-control" id="nom" name="nom">
+                <div class="mb-3 mt-3">
+                  <label for="nom" class="form-label">Nombre:</label>
+                  <input type="text" class="form-control" id="nom" name="nom">
+                </div>
+                <div class="mb-3 mt-3">
+                  <label for="lt" class="form-label">Mueva el icono a la ubicación de la caseta:</label>
+                  <!-- <label for="lt" class="form-label">Latitud:</label> -->
+                  <input type="hidden" class="form-control" id="lt" name="lt">
+                </div>
+                <div class="mb-3 mt-3">
+                  <!-- <label for="lg" class="form-label">Longitud:</label> -->
+                  <input type="hidden" class="form-control" id="lg" name="lg">
+                </div>
+                <div class="mb-3 mt-3" style="display: none;">
+                  <!-- <label for="estado" class="form-label">Estado:</label> -->
+                  <input type="hidden" class="form-control" id="estado" value="1" name="estado">
+                </div>
+                <div class="mb-3 mt-3">
+                  <div id="map"></div>
+                </div>
+                <!-- <button type="Button" class="btn btn-primary form-control"onclick="enviar()">Crear</button> -->
+                <input class="btn btn-primary form-control" type="submit" value="Crear" name="crear">
+              </form>
+            </div>
           </div>
-          <div class="mb-3 mt-3">
-            <label for="lt" class="form-label">Mueva el icono a la ubicación de la caseta:</label>
-            <!-- <label for="lt" class="form-label">Latitud:</label> -->
-            <input type="hidden" class="form-control" id="lt" name="lt">
-          </div>
-          <div class="mb-3 mt-3">
-            <!-- <label for="lg" class="form-label">Longitud:</label> -->
-            <input type="hidden" class="form-control" id="lg" name="lg">
-          </div>
-          <div class="mb-3 mt-3" style="display: none;">
-            <!-- <label for="estado" class="form-label">Estado:</label> -->
-            <input type="hidden" class="form-control" id="estado" value="1" name="estado">
-          </div>
-          <div class="mb-3 mt-3">
-            <div id="map"></div>
-          </div>
-          <!-- <button type="Button" class="btn btn-primary form-control"onclick="enviar()">Crear</button> -->
-          <input class="btn btn-primary form-control" type="submit" value="Crear" name="crear">
-        </form>
+        </div>
+
       </div>
+
     </div>
   </div>
+
 
   <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjb7q0iaGczXVMR75hiNFyNb-hsbH0Xm8&callback=initMap&v=weekly&language=es&region=ES"
@@ -153,12 +172,33 @@ if (empty($_SESSION["id"])) {
   <script>
     $(document).ready(function () {
       $("#btn1").attr("disable", true);
+      $(".sidebar ul li.active").removeClass('active');
+      $("#li-lobobici").addClass('active')//En cada sección cambiar li-inicio por el que corresponda
+      $("li#li-inicio a").on('click', function () {
+        $(this).attr("href", "index.php");
+      });
+
+      $("li#li-calles a").on('click', function () {
+        //$(this).attr("href", "calles.php")
+        alert('No implemented');
+      });
+
+      $("li#li-lobobus a").on('click', function () {
+        //$(this).attr("href", "lobobus.php")
+        alert('No implemented');
+      });
+
+      $("li#li-lobobici a").on('click', function () {
+        //$(this).attr("href", "lobobici.php")
+        alert('No implemented');
+      });
+
+      $("li#li-horarios a").on('click', function () {
+        //$(this).attr("href", "horarios.php")
+        alert('No implemented');
+      });
     });
-    function salir() {
-      location.href = "salir.php"
-    }
     function agregar() {
-      // location.href="lobobicima.php"
       location.href = "lobobicima.php"
     }
     function modificar() {
@@ -170,7 +210,7 @@ if (empty($_SESSION["id"])) {
     function abrir() {
       location.href = "lobobicio.php"
     }
-    
+
   </script>
 </body>
 
